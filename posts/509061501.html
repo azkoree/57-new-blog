@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
   
-  <meta name="robots" content="noindex,follow">
+  
   <meta name="generator" content="Hexo 8.1.2">
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   
@@ -17,22 +17,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
-  <title>归档 - 57之新塔</title>
+  <title>RM小技集 - 57之新塔</title>
 
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="http://www.57hmpg.top/archives/2026/">
+    <meta name="description" content="rm论坛即将关闭之际，日本人整理的论坛上的rm小技巧，基本是关于游戏制作流程优化，以及系统数值上的一些小知识，不知道有没有用，就搬过来了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RM小技集">
+<meta property="og:url" content="http://www.57hmpg.top/posts/509061501">
 <meta property="og:site_name" content="57之新塔">
+<meta property="og:description" content="rm论坛即将关闭之际，日本人整理的论坛上的rm小技巧，基本是关于游戏制作流程优化，以及系统数值上的一些小知识，不知道有没有用，就搬过来了">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.57hmpg.top/img/favicon.ico">
+<meta property="article:published_time" content="2026-07-02T14:24:27.000Z">
+<meta property="article:modified_time" content="2026-07-02T14:25:48.993Z">
 <meta property="article:author" content="五十七">
+<meta property="article:tag" content="RMMZ">
+<meta property="article:tag" content="转载文章">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://www.57hmpg.top/img/favicon.ico">
   
   
   
-  
+  <meta name="keywords" content="RMMZ,转载文章">
 
   <!-- feed -->
   
@@ -44,12 +50,12 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"http://www.57hmpg.top","author":{"@type":"Person","name":"五十七","sameAs":[],"image":"/img/favicon.ico"},"name":"57之新塔","description":"","url":"http://www.57hmpg.top"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"五十七","sameAs":[],"image":"/img/favicon.ico"},"dateCreated":"2026-07-02T22:24:27+08:00","dateModified":"2026-07-02T22:25:48+08:00","datePublished":"2026-07-02T22:24:27+08:00","description":"","headline":"RM小技集","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.57hmpg.top/posts/509061501/"},"publisher":{"@type":"Organization","name":"五十七","sameAs":[],"image":"/img/favicon.ico","logo":{"@type":"ImageObject","url":"/img/favicon.ico"}},"url":"http://www.57hmpg.top/posts/509061501/","keywords":"RMMZ, 转载文章","image":[]}</script>
   
 </head>
 <body>
 
-<div class="l_body index" id="start" layout="undefined" type="undefined" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
 
 
 <header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/img/favicon.ico" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">57之新塔</div></a></div></header>
@@ -61,17 +67,210 @@
 <div class="widgets">
 <div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
 
+
+
 <widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/posts/509061501/"><span class="title">RM小技集</span></a><a class="item title" href="/posts/2485290938/"><span class="title">用TileD画rmmz地图入门</span></a><a class="item title" href="/posts/445594665/"><span class="title">re9主题里昂鼠标光标配布</span></a><a class="item title" href="/posts/839109545/"><span class="title">也许是最适配MZ战斗序列的sv战斗图扩展——BattleMotionMZ</span></a><a class="item title" href="/posts/4067454985/"><span class="title">博客的迁移</span></a></div></widget>
 </div>
 <footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/azkoree" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/></a></div></footer>
 </div></aside><div class="l_main" id="main">
 
-<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/img/favicon.ico" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">57之新塔</div></a></div></header>
-
- 
 
 
-<div class="navbar top"><div class="navbar-blur"><div class="navbar-container"><nav class="post"><a href="/">近期发布</a><a href="/categories/">分类</a><a href="/tags/">标签</a><a class="active" href="/archives/">归档</a></nav></div></div></div><div class="post-list archives"><article class="" id="archive"><div class='archive-header h4'>2026</div><div class="archive-list"><a class='post fs14' href="/posts/509061501/"><time>07-02</time><span>RM小技集</span></a></div><div class="archive-list"><a class='post fs14' href="/posts/839109545/"><time>07-02</time><span>也许是最适配MZ战斗序列的sv战斗图扩展——BattleMotionMZ</span></a></div><div class="archive-list"><a class='post fs14' href="/posts/4067454985/"><time>07-01</time><span>博客的迁移</span></a></div><div class="archive-list"><a class='post fs14' href="/posts/445594665/"><time>06-15</time><span>re9主题里昂鼠标光标配布</span></a></div><div class="archive-list"><a class='post fs14' href="/posts/2485290938/"><time>02-14</time><span>用TileD画rmmz地图入门</span></a></div></article></div>
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/RM%E7%9B%B8%E5%85%B3/">RM相关</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/RM%E7%9B%B8%E5%85%B3/%E5%B0%8F%E6%8A%80%E5%B7%A7/">小技巧</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2026-07-02T14:24:27.000Z">2026-07-02</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-07-02T14:25:48.993Z">2026-07-02</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>RM小技集</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><p>rm论坛即将关闭之际，日本人整理的论坛上的rm小技巧，基本是关于游戏制作流程优化，以及系统数值上的一些小知识，不知道有没有用，就搬过来了</p>
+<p>原网址：<a target="_blank" rel="noopener" href="https://yuwakas.blog.shinobi.jp/Entry/468/">YUWAKA’S SOFT ツクールMV・MZで使える小技　ツクールフォーラム編</a></p>
+<hr>
+<p><strong>投稿：神無月サスケ様</strong></p>
+<p><strong>■ 尽量给事件取名（对人物等重要的角色）</strong></p>
+<p>在事件数量较多的地图中，以事件为对象执行事件命令时，有无名字将极大影响操作的便利性。（比如：以事件为目标设置移动路线，显示表情图标）</p>
+<p><strong>■ 把频繁使用的开关放在1 ~ 20号，其余放在后面</strong></p>
+<p>懂得都懂，开关&#x2F;变量每页显示20个。各位在制作过程中，会不会有一些经常使用的开关&#x2F;变量呢？</p>
+<p>以笔者而言，因为事件演出中会重复使用开关&#x2F;变量，类似“通用1” ~ “通用10”这样的。</p>
+<p>这种常用开关&#x2F;变量放在第一页，能省去多少麻烦，想必各位也都知道。</p>
+<p><strong>■ 物品&#x2F;装备按类别预留空位，必要时用插件处理</strong></p>
+<p>物品和装备是按数据库ID顺序显示的，因此，比如想为每个角色制作最多十种武器，就要预先决定好id1 ~ 10给角色1用，id11 ~ 20给角色2用……以此类推，这样制作装备。</p>
+<p>如果完全是想到哪做到哪，不仅看起来混乱，装备画面也完全没法看。</p>
+<p>另，想要细微调整时，笔者使用插件来解决。比如，“随便做了装备，但是想按从强到弱来排序”，用插件就能搞定。</p>
+<p><strong>■ 同样的，公共事件也建议按功能每10~20个为一组分类</strong></p>
+<p>这是基于笔者的游戏中有120个公共事件的经验，而给各位的建议。</p>
+<p>当公共事件只有30 ~ 40个左右，看列表还能知道哪个公共事件在哪。然而，经过不断添加到120个之后，就开始责怪自己分类太偷懒了。”那个公共事件在哪来着？“这么想着在列表中寻找，最糟糕时花了一分多钟才找到。</p>
+<p>如果一开始就按功能分类，就不会这样了。</p>
+<p>现在作为权宜之计，在公共事件名称前加上”■●◎★☆▲▼“等符号，以便判断”是哪种类型的公共事件“，这当然不优雅，笔者自己也不太满意。</p>
+<p>★★★以下本想另开一个帖子，但还是特意补充在这里。</p>
+<p><strong>■用一个变量管理游戏进程时，每次增加10左右而非1</strong></p>
+<p>新手教程中有提到”与其用大量开关管理事件，不如用一个变量管理更简洁“</p>
+<p><a target="_blank" rel="noopener" href="http://tkool.jp/mv/guide/006_005f.html">http://tkool.jp/mv/guide/006_005f.html</a></p>
+<p>然而，由于每完成一个事件就加1，当需要在中间插入事件时，就要另外准备开关了。</p>
+<p>例如：本来事件A（变量&#x3D;3）之后是事件B（变量&#x3D;4），但要在中间插入事件C的话，就需要额外的开关。虽然面向进阶用户，但为何不果断尝试每次完成事件时增加10呢？这样就不需要额外的开关了。</p>
+<p>例如：本来事件A（变量&#x3D;30）之后是事件B（变量&#x3D;40），但要在中间插入事件C的话，只要设为变量&#x3D;35就行了。</p>
+<p>此外，每到新一章，就将变量的百位数增加1，诸如此类，还有很大发挥创意的空间。</p>
+<p><strong>■在切换地图前不会出现的事件，建议使用”暂时清除“</strong></p>
+<p>通过事件命令”暂时消除事件“来消除，可以在脚本层面省略多余的处理，从而减轻游戏负担。如果各位有人使用透明的事件页来放置这类事件，建议果断使用”暂时消除“来处理它们。</p>
+<hr>
+<p><strong>投稿：メルサイア様</strong></p>
+<ul>
+<li>可以同时打开两个以上项目文件进行复制粘贴</li>
+</ul>
+<p>　→　可复制粘贴各种事件、插件列表和参数等。即使没有两个正版软件，一个也可以操作</p>
+<ul>
+<li>在动画选项卡中，画面上隐藏的无法点击的对象可以用”Shift+点击“选择</li>
+</ul>
+<p>　→　对象的个别设置用”右键点击“，想要创建新对象时用”双击“</p>
+<hr>
+<p><strong>しんぞ様</strong></p>
+<p>在事件中向同一地图进行场所移动时（比如角色演出结束后黑屏并回到初始位置之类的），有一个防止不小心移动到墙壁内而卡死的小技巧。</p>
+<p>虽然只能在同一地图内移动时使用，但这种bug意外地常见。</p>
+<p>设置一个空白事件标记站立位置，然后让角色移动到那个事件上。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">◆变量操作：#0033 temp:x轴 = 标记：回村的 地图X</span><br><span class="line">◆变量操作：#0034 temp:y轴 = 标记：回村的 地图Y</span><br><span class="line">◆变量操作：#0035 temp:地图ID = 地图ID</span><br><span class="line">◆场所移动：&#123;temp:地图ID&#125; (&#123;temp:x轴&#125;,&#123;temp:y轴&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>这样在之后移动地图时，比起目测移动目标的坐标并重新设置，通过拖放一键改变标记的位置来应对，是不是更方便呢？</p>
+<p>（其实这里我没看懂。。）</p>
+<p>另外，Mac 用户为了防止控制符「\」不显示为「\」，可以更改「日语输入设置→\键输入的字符」的初始设定，会轻松一些。</p>
+<hr>
+<p><strong>投稿：moge-moge-kun様</strong></p>
+<p>制作地图时，觉得地图素材看着很费劲！这个时候进行的设置，</p>
+<p>工具 - 选项 - 将背景色的三个滑块移动就能调整到合适的感觉。</p>
+<p><img src="https://blog.cnobi.jp/v1/blog/user/f3c1faccf1746dcbd12add0f0c8aec73/1781172884"></p>
+<hr>
+<p><strong>投稿：エフ☆様</strong></p>
+<ul>
+<li>用事件改变BGM时，比起直接使用”更改BGM“，比如使用公共事件，名为”快乐时的主题“”Boss战的主题“之类的，之后替换BGM会更方便。（公共事件内还可以设置开关变量等）</li>
+<li>给宝箱取名为”药水“”金钱“之类的，之后搜索事件会更方便。（可以防止”这武器是在哪获得的来着？“这种情况。）</li>
+</ul>
+<hr>
+<p><strong>投稿：くろうど様</strong></p>
+<p>在战斗事件中，战斗开始时给敌方全体附加1回合无法行动的状态，实质上就相当于先制攻击了。</p>
+<hr>
+<p><strong>投稿：ドラム瓶様</strong></p>
+<p>选择事件的执行内容的一行 → 按住 Shift 并再次选择想要的位置，可以大量复制粘贴，非常方便。</p>
+<hr>
+<p><strong>投稿：Chie様</strong></p>
+<p>在MV中制作不同颜色战斗动画的方法。选择数据库- 动画，复制想要制作不同颜色的战斗动画项目，粘贴到空白项目处，保持原动画不变，编辑复制出来的动画。</p>
+<p>更改战斗动画的图像色调就行了。</p>
+<p><img src="https://blog.cnobi.jp/v1/blog/user/f3c1faccf1746dcbd12add0f0c8aec73/1781173545"></p>
+<p><img src="https://blog.cnobi.jp/v1/blog/user/f3c1faccf1746dcbd12add0f0c8aec73/1781173540"></p>
+<p>使用这个方法，可以轻松制作不同颜色的战斗动画。</p>
+<p>如果再改变与动画同时播放的音效，就能获得更多的变化哦(<em>´ω｀</em>)</p>
+<hr>
+<p><strong>投稿：夢幻台様</strong></p>
+<p>关于音频，将音高在100%上下调整，即使是同一个音也能在一定程度上”甚至彻底“改变氛围。在没有找到合适SE时很有效。</p>
+<p>个人建议BGM在10% - 20%之间调整，SE&#x2F;ME则大胆增减50%效果更佳。</p>
+<hr>
+<p><strong>投稿：とんび@鳶嶋工房 先生</strong></p>
+<p>在 Mac 版 RPG Maker MV 的地图编辑器中，可以用 command+滚轮 进行缩放。</p>
+<hr>
+<p><strong>投稿：くろうど様</strong></p>
+<p>在”只执行一次的处理 - 通用处理“这样的流程中，虽然可以用独立开关分两页来写，但会导致描述重复或需要使用公共事件。</p>
+<p>而通过将条件设为开关（或独立开关）为OFF的情况，可以在一页内完成。</p>
+<p><img src="https://blog.cnobi.jp/v1/blog/user/f3c1faccf1746dcbd12add0f0c8aec73/1781174242"></p>
+<p>设置字体优先级，使用操作系统自带的字体。</p>
+<p>在fonts文件夹内（不是js文件夹）的gamefont.css文件中，用local描述来指定想要使用的操作系统自带字体。</p>
+<p><img src="https://blog.cnobi.jp/v1/blog/user/f3c1faccf1746dcbd12add0f0c8aec73/1781176422"></p>
+<hr>
+<p><strong>回答：ルファー様</strong></p>
+<p>Q：计算结果（x&#x2F;y）出现小时时会怎样？</p>
+<p>A：会向下取整。</p>
+<p>事先对x稍作加工，也可以计算四舍五入或向上取整</p>
+<p>向上取整：(y - 1 + x) ÷ y</p>
+<p>四舍五入：(y ÷ 2 + x) ÷ y  ※第一次除法也会舍去小数</p>
+<hr>
+<p><strong>投稿：ハッサクリーフ様</strong></p>
+<p>想要让电梯看起来在移动，可通过循环背景事先。</p>
+<p>首先以建筑物为中心进行制作，事先将墙壁地图铺满整个画面并截取地图图片。</p>
+<p>然后将其放入远景文件夹中，在刚才那栋建筑物的地图编辑器中，将刚才的墙壁地图选择为背景。</p>
+<p>之后，如果是向上的电梯就让背景向下循环，反之则向上循环，这样就完成了。</p>
+<hr>
+<p><strong>投稿：シトラス様</strong></p>
+<p>当所有条件都满足时想要触发某个事件，无需嵌套条件分歧，这里介绍一种更简单的分支方法。</p>
+<p>例如，当持有地水火风光暗的宝玉时想要打开魔王城的大门，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">变量・魔王城大门开放 = 0</span><br><span class="line">条件分歧：持有地之宝玉</span><br><span class="line">　　变量・魔王城大门开放 增加 1</span><br><span class="line">条件分歧：结束</span><br><span class="line">条件分歧：持有水之宝玉</span><br><span class="line">　　变量・魔王城大门开放 增加 1</span><br><span class="line">条件分歧：结束</span><br><span class="line">重复此操作直到暗之宝玉。然后</span><br><span class="line">条件分歧：魔王城大门开放 = 6</span><br><span class="line">　　消息：</span><br><span class="line">　　凭借宝玉的力量，魔王城的大门打开了！</span><br><span class="line">魔王城大门开放 ≠ 6</span><br><span class="line">　　消息：</span><br><span class="line">　　魔王城的大门紧紧关闭着……</span><br><span class="line">条件分歧：结束</span><br><span class="line">变量・魔王城大门开放 = 0</span><br></pre></td></tr></table></figure>
+
+<p>这样，就可以在不嵌套条件分歧的情况下，简洁地处理多个条件同时满足时的分支。</p>
+<p>关于状态接触时机的”回合结束时“和”行动结束时“的区别。</p>
+<p>对于所谓的”再生&#x2F;持续伤害状态“，在回合结束时解除，会按照解除 - 数值变化的顺序进行，这是反直觉的。除此之外，”回合结束时“默认情况下在地图上移动20步时会推进有效回合数。而”行动结束时“则在地图上不会推进。</p>
+<p>因此，想要实现”再生&#x2F;持续伤害状态“或料理等跨越战斗的状态时，建议将状态解除时机设为”行动结束时“。</p>
+<hr>
+<p><strong>投稿：リンクス様</strong></p>
+<p>游戏的参数即使只是数据库的内容，也建议用 Excel 等工具整理好。即使是”神级 Excel“，只要本人能确认就没问题。多人制作时还需要制定便于查看和编辑的格式……。</p>
+<p>同样，台词（显示文章）也进行管理的话，不仅便于修改，在制作续作时也能回忆起内容，而且在合作等情况下需要将自己的角色交给他人使用时，也可以作为样本提交。</p>
+<hr>
+<p><strong>投稿：猫二郎様</strong></p>
+<p>介绍「<a target="_blank" rel="noopener" href="https://www.petitmonte.com/labo/reducedcolor/">图片减色</a>」工具。</p>
+<p>介绍关于游戏 α 版和 β 版区别的<a target="_blank" rel="noopener" href="https://yoshi-seventh.com/archives/1769#google_vignette">教程网站</a>。</p>
+<p>据说 RPG Maker 的变量可以使用三角函数，介绍一下<a target="_blank" rel="noopener" href="https://x.com/triacontane/status/850573762927841281">トリアコンタン 先生的推文</a>。</p>
+<p>当想根据是否搭乘交通工具的条件分歧来更改图片时<br><img src="https://blog.cnobi.jp/v1/blog/user/f3c1faccf1746dcbd12add0f0c8aec73/1781176633" alt="img"></p>
+<hr>
+<p><strong>投稿：Pandra Nohope様</strong></p>
+<p>属性有效度、状态异常有效度、普通能力值等的倍率指定，如果对同一数据重复设置，会进行乘法运算。</p>
+<p>在状态的特性栏中进行以下设置，某个属性的伤害就会变成 100 万倍。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">属性有效度　某个属性 * 1000%</span><br><span class="line">属性有效度　某个属性 * 1000%</span><br><span class="line">属性有效度　某个属性 * 1000%</span><br><span class="line">属性有效度　某个属性 * 1000%</span><br><span class="line">属性有效度　某个属性 * 1000%</span><br><span class="line">属性有效度　某个属性 * 1000%</span><br></pre></td></tr></table></figure>
+
+<p>在敌人的特性栏中进行以下设置，并通过修改脚本本体等方式提高 HP 上限，就可以制作出 HP 10 亿的敌人。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">基本设置／最大HP:10000</span><br><span class="line">参数　最大HP * 1000%</span><br><span class="line">参数　最大HP * 1000%</span><br><span class="line">参数　最大HP * 1000%</span><br><span class="line">参数　最大HP * 1000%</span><br><span class="line">参数　最大HP * 1000%</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>投稿：sally_elly様</strong></p>
+<p>像浪漫沙加那样，只显示力量等基础属性，想要用其他数值来处理综合攻击力和防御力时，可以利用属性有效度。</p>
+<p>在战斗计算公式中将属性有效度 ×100，就可以作为伪整数来处理，计算上也不会太麻烦。</p>
+<p>如果不想使用敌人组中的固定配置，敌人组只设置主要敌人，在战斗事件的第 0 回合组合使用敌人出现和强制变身，就可以在事件侧控制敌人的配置。</p>
+<p>此时，给敌人设置 S・M・L・LL 的大小，分别对应变量 1、2、4、6，最多可以出现合计 8，这样组合的话，LL 情况下可以设置 2 个 S 级小弟、1 个 M 级小弟等。</p>
+<p>最初的设计虽然麻烦，但只要克服了这一点，就不需要为敌人组的组合而烦恼，也不需要制作大量的敌人组了。</p>
+<p><strong>投稿：んーぞー様</strong></p>
+<p>RPG Maker MZ 标准功能可以更改分辨率，但最多只能输入 2000x2000。</p>
+<p>但是，直接编辑 System.json 的话，可以为 screenWidth&#x2F;screenHeight、uiAreaWidth&#x2F;uiAreaHeight 设置更大的值。</p>
+<p>甚至可以设置 4K 分辨率（3840x2160）哦。</p>
+<p>-——————————</p>
+<p><strong>投稿：んーぞー様</strong></p>
+<p>ツクールMZは標準で解像度を変更できますが、2000x2000までしか入力できません。</p>
+<p>ですがSystem.jsonを直接編集すればscreenWidth&#x2F;screenHeight、uiAreaWidth&#x2F;uiAreaHeightにそれ以上の値を設定できます。</p>
+<p>4K解像度（3840x2160）にもできますよ。</p>
+<p>-——————————</p>
+</article>
+<div class="article-footer">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+</div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/posts/839109545/">也许是最适配MZ战斗序列的sv战斗图扩展——BattleMotionMZ</a></div></section></div>
+
+
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>快来参与讨论吧~</p>
+
+    </section>
+    <section class='body cmt-body twikoo'>
+      
+
+<div id="twikoo_container"><svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+    </section>
+  </div>
+
+
+
 <footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">五十七</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
@@ -569,6 +768,22 @@
 
 
 <!-- optional -->
+
+  <script type="module">
+  const el = document.getElementById('twikoo_container');
+  util.viewportLazyload(el, load_twikoo, false);
+
+  function load_twikoo() {
+    if (!el) return;
+    utils.js('https://gcore.jsdelivr.net/npm/twikoo@1.6/dist/twikoo.all.min.js', {defer: true}).then(function () {
+      const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
+      twikoo.init(Object.assign({"js":"https://gcore.jsdelivr.net/npm/twikoo@1.6/dist/twikoo.all.min.js","envId":"https://57com.netlify.app/.netlify/functions/twikoo"}, {
+        el: '#twikoo_container',
+        path: path,
+      }));
+    });
+  }
+</script>
 
 
 
