@@ -17,15 +17,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
-  <title>57之新塔</title>
+  <title>RMActionCombat：创建敌人 - 57之新塔</title>
 
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="57之新塔">
-<meta property="og:url" content="http://www.57hmpg.top/wiki/">
+    <meta name="description" content="创建敌人创建第一个敌人肯定是一个有趣的体验，开始吧！  基础配置创建一个预置事件，取名为slime。在数据库中，也创建一个同名敌人，并自行设置敌人的属性数值。   在事件添加备注标签&lt;enemy&gt;（或者也可以创建自己的标签，这无需匹配）。接下来，创建一个范围检测条件分歧。别忘了给它设置自主移动。 可选：可以给它加入条件分歧gotHit(this)，在事件HP减少时则返回true。  碰">
+<meta property="og:type" content="website">
+<meta property="og:title" content="创建敌人">
+<meta property="og:url" content="http://www.57hmpg.top/wiki/RMActionCombat/7-create-an-enemy/">
 <meta property="og:site_name" content="57之新塔">
+<meta property="og:description" content="创建敌人创建第一个敌人肯定是一个有趣的体验，开始吧！  基础配置创建一个预置事件，取名为slime。在数据库中，也创建一个同名敌人，并自行设置敌人的属性数值。   在事件添加备注标签&lt;enemy&gt;（或者也可以创建自己的标签，这无需匹配）。接下来，创建一个范围检测条件分歧。别忘了给它设置自主移动。 可选：可以给它加入条件分歧gotHit(this)，在事件HP减少时则返回true。  碰">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.57hmpg.top/img/favicon.ico">
+<meta property="article:published_time" content="2026-07-14T09:07:34.709Z">
+<meta property="article:modified_time" content="2026-07-14T09:07:34.709Z">
 <meta property="article:author" content="五十七">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://www.57hmpg.top/img/favicon.ico">
@@ -44,47 +48,110 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"http://www.57hmpg.top","author":{"@type":"Person","name":"五十七","sameAs":[],"image":"/img/favicon.ico"},"name":"57之新塔","description":"","url":"http://www.57hmpg.top"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"http://www.57hmpg.top/wiki/RMActionCombat/7-create-an-enemy/","author":{"@type":"Person","name":"五十七","sameAs":[],"image":"/img/favicon.ico"},"name":"创建敌人","description":"创建敌人创建第一个敌人肯定是一个有趣的体验，开始吧！\n\n基础配置创建一个预置事件，取名为slime。在数据库中，也创建一个同名敌人，并自行设置敌人的属性数值。\n\n\n在事件添加备注标签&lt;enemy&gt;（或者也可以创建自己的标签，这无需匹配）。接下来，创建一个范围检测条件分歧。别忘了给它设置自主移动。\n可选：可以给它加入条件分歧gotHit(this)，在事件HP减少时则返回true。...","url":"http://www.57hmpg.top/wiki/RMActionCombat/7-create-an-enemy/"}</script>
   
 </head>
 <body>
 
-<div class="l_body index" id="start" layout="index_wiki" type="undefined" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
 
 
-<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/img/favicon.ico" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">57之新塔</div></a></div></header>
+<div class="l_body content" id="start" layout="page" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><div class="icon"><img no-lazy class="icon" src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2779789.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><a class="title" href="/wiki/RMActionCombat/"><div class="main">RMActionCombat</div></a></div></header>
 
 <div class="nav-area">
 
 <nav class="menu dis-select"><a class="nav-item" title="博客" href="/" style="color:#6c8ad5"><span>博客</span></a><a class="nav-item active" title="文档" href="/wiki/" style="color:#6c8ad5"><span>文档</span></a><a class="nav-item" title="关于" href="/about/" style="color:#6c8ad5"><span>关于</span></a></nav>
 </div>
 <div class="widgets">
-<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" data-filter="/wiki/RMActionCombat/" placeholder="在 RMActionCombat 中搜索..."></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
 
 
-
-<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/wiki/RMActionCombat/23-reset/"><span class="title"><strong>RMActionCombat</strong><span class="dot"></span>重置开关变量，独立开关</span></a><a class="item title" href="/wiki/RMActionCombat/22-child-and-parent/"><span class="title"><strong>RMActionCombat</strong><span class="dot"></span>上下级关系</span></a><a class="item title" href="/wiki/RMActionCombat/21-loot/"><span class="title"><strong>RMActionCombat</strong><span class="dot"></span>战利品</span></a><a class="item title" href="/wiki/RMActionCombat/20-mount/"><span class="title"><strong>RMActionCombat</strong><span class="dot"></span>骑乘</span></a><a class="item title" href="/wiki/RMActionCombat/19-jumping/"><span class="title"><strong>RMActionCombat</strong><span class="dot"></span>跳跃</span></a><a class="item title" href="/wiki/RMActionCombat/18-collision-rect/"><span class="title"><strong>RMActionCombat</strong><span class="dot"></span>碰撞矩形</span></a><a class="item title" href="/wiki/RMActionCombat/17-damage-calculation/"><span class="title"><strong>RMActionCombat</strong><span class="dot"></span>伤害计算</span></a><a class="item title" href="/wiki/RMActionCombat/16-8directions-sprite/"><span class="title"><strong>RMActionCombat</strong><span class="dot"></span>八方向精灵</span></a><a class="item title" href="/wiki/RMActionCombat/15-spritesheet-animator/"><span class="title"><strong>RMActionCombat</strong><span class="dot"></span>精灵表动画</span></a><a class="item title" href="/wiki/RMActionCombat/14-character-motion/"><span class="title"><strong>RMActionCombat</strong><span class="dot"></span>角色待机/走路/奔跑</span></a></div></widget>
+<widget class="widget-wrapper doc-tree post-list"><div class="widget-body fs14"><a class="link" href="/wiki/RMActionCombat/#start"><span class="toc-text">写在前面</span></a><a class="link" href="/wiki/RMActionCombat/0-how-to-use-tutorials/"><span class="toc-text">如何使用本教程</span></a><a class="link" href="/wiki/RMActionCombat/1-prefab-event/"><span class="toc-text">预置事件</span></a><a class="link" href="/wiki/RMActionCombat/2-dynamic-event/"><span class="toc-text">动态事件</span></a><a class="link" href="/wiki/RMActionCombat/3-passive-feature/"><span class="toc-text">被动功能</span></a><a class="link" href="/wiki/RMActionCombat/4-hitbox/"><span class="toc-text">碰撞箱</span></a><a class="link" href="/wiki/RMActionCombat/5-checking-collision/"><span class="toc-text">碰撞检测</span></a><a class="link" href="/wiki/RMActionCombat/6-range-checking/"><span class="toc-text">范围检测</span></a><a class="link active" href="/wiki/RMActionCombat/7-create-an-enemy/"><span class="toc-text">创建敌人</span><svg class="active-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M21 11.098v4.993c0 3.096 0 4.645-.734 5.321c-.35.323-.792.526-1.263.58c-.987.113-2.14-.907-4.445-2.946c-1.02-.901-1.529-1.352-2.118-1.47a2.225 2.225 0 0 0-.88 0c-.59.118-1.099.569-2.118 1.47c-2.305 2.039-3.458 3.059-4.445 2.945a2.238 2.238 0 0 1-1.263-.579C3 20.736 3 19.188 3 16.091v-4.994C3 6.81 3 4.666 4.318 3.333C5.636 2 7.758 2 12 2c4.243 0 6.364 0 7.682 1.332C21 4.665 21 6.81 21 11.098" opacity=".5"/><path fill="currentColor" d="M9 5.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5z"/></svg></a><a class="link" href="/wiki/RMActionCombat/8-setup-a-player/"><span class="toc-text">设定玩家</span></a><a class="link" href="/wiki/RMActionCombat/9-state/"><span class="toc-text">状态</span></a><a class="link" href="/wiki/RMActionCombat/10-local-variables/"><span class="toc-text">局部变量</span></a><a class="link" href="/wiki/RMActionCombat/11-random-chances/"><span class="toc-text">随机概率</span></a><a class="link" href="/wiki/RMActionCombat/12-extra-self-switch/"><span class="toc-text">额外独立开关</span></a><a class="link" href="/wiki/RMActionCombat/13-character-animations/"><span class="toc-text">角色动画</span></a><a class="link" href="/wiki/RMActionCombat/14-character-motion/"><span class="toc-text">角色待机/走路/奔跑</span></a><a class="link" href="/wiki/RMActionCombat/15-spritesheet-animator/"><span class="toc-text">精灵表动画</span></a><a class="link" href="/wiki/RMActionCombat/16-8directions-sprite/"><span class="toc-text">八方向精灵</span></a><a class="link" href="/wiki/RMActionCombat/17-damage-calculation/"><span class="toc-text">伤害计算</span></a><a class="link" href="/wiki/RMActionCombat/18-collision-rect/"><span class="toc-text">碰撞矩形</span></a><a class="link" href="/wiki/RMActionCombat/19-jumping/"><span class="toc-text">跳跃</span></a><a class="link" href="/wiki/RMActionCombat/20-mount/"><span class="toc-text">骑乘</span></a><a class="link" href="/wiki/RMActionCombat/21-loot/"><span class="toc-text">战利品</span></a><a class="link" href="/wiki/RMActionCombat/22-child-and-parent/"><span class="toc-text">上下级关系</span></a><a class="link" href="/wiki/RMActionCombat/23-reset/"><span class="toc-text">重置开关变量，独立开关</span></a></div></widget>
 </div>
 <footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/azkoree" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/></a></div></footer>
 </div></aside><div class="l_main" id="main">
 
-<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/img/favicon.ico" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">57之新塔</div></a></div></header>
 
 
 
 
-<div class="navbar top"><div class="navbar-blur"><div class="navbar-container"><nav class="wiki"><a class="active" href="/wiki/">所有项目</a></a><a href="/wiki/tags/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/">转载文章</a></a><a href="/wiki/tags/%E5%88%9B%E4%BD%9C/">创作</a></a></nav></div></div></div>
-<div class="post-list wiki"><a class="post-card wiki" href="/wiki/%E6%AD%A3%E9%82%AA%E9%9A%BE%E5%88%86/">
-<article class="md-text"><div class="preview"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2779789.png"/></div><div class="excerpt"><div class="caps"><span class="cap breadcrumb">创作</span></div><h2 class="post-title">正邪难分（暂定）设定</h2><p>个人企划的一些设定。。</p></div></article>
-</a></div><div class="post-list wiki"><a class="post-card wiki" href="/wiki/RPG%E8%AE%B2%E5%BA%A7/">
-<article class="md-text"><div class="preview"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2779789.png"/></div><div class="excerpt"><div class="caps"><span class="cap breadcrumb">转载文章</span></div><h2 class="post-title">RPG讲座</h2><p>一些文章翻译。</p></div></article>
-</a></div><div class="post-list wiki"><a class="post-card wiki" href="/wiki/RMActionCombat/">
-<article class="md-text"><div class="preview"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2779789.png"/></div><div class="excerpt"><div class="caps"><span class="cap breadcrumb">转载文章</span></div><h2 class="post-title">RPG Maker Action Combat 文字教程</h2><p>RPG Maker Action Combat插件的教程汉化</p></div></article>
-</a></div>
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">文档</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/RMActionCombat/">RMActionCombat</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">更新于：<time datetime="2026-07-14T09:07:34.709Z">2026-07-14</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>创建敌人</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="创建敌人"><a href="#创建敌人" class="headerlink" title="创建敌人"></a>创建敌人</h1><p>创建第一个敌人肯定是一个有趣的体验，开始吧！</p>
+<p><img src="https://img.57hmpg.top/file/1784013638964_image.png"></p>
+<h2 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h2><p>创建一个<strong>预置事件</strong>，取名为<em>slime</em>。在数据库中，也创建一个同名敌人，并自行设置敌人的属性数值。</p>
+<p><img src="https://img.57hmpg.top/file/1784012940556_image.png"></p>
+<p><img src="https://img.57hmpg.top/file/1784012971182_image.png"></p>
+<p>在事件添加备注标签<code>&lt;enemy&gt;</code>（或者也可以创建自己的标签，这无需匹配）。接下来，创建一个范围检测条件分歧。别忘了给它设置自主移动。</p>
+<p><strong>可选</strong>：可以给它加入条件分歧<strong>gotHit(this)</strong>，在事件HP减少时则返回true。</p>
+<p><img src="https://img.57hmpg.top/file/1784012992880_image.png"></p>
+<h2 id="碰撞设置"><a href="#碰撞设置" class="headerlink" title="碰撞设置"></a>碰撞设置</h2><p>创建一个名为**Enemy Collision Check（敌人碰撞检测）**的公共事件。在“this”与带有备注标签 <code>&lt;magicAttack&gt;</code> 的事件之间使用checkCollide条件分歧。</p>
+<p>这里，当checkCollide返回true，对事件ID“this”使用命令<strong>Increase &#x2F; Decrease Character HP（增减角色HP）</strong>，更改为“- damage”，来将Slime的 HP 减去具有<code>&lt;magicAttack&gt;</code>标签的事件中备注标签<code>&lt;dmg: x&gt; </code>中的数值。</p>
+<p>如果要显示伤害数字，使用**Pop Text Value（弹出数值文本）**命令并在Value输入“damage”。</p>
+<p><img src="https://img.57hmpg.top/file/1784013037151_image.png"></p>
+<p>回到Slime事件，加入<strong>passive feature（被动功能）</strong>，调用刚才创建的公共事件</p>
+<p><img src="https://img.57hmpg.top/file/1784013053845_image.png"></p>
+<p>现在，尝试将带有注释标签<code> **&lt;magicAttack&gt; &lt;dmg: 50&gt;**</code> 的事件向黏液移动。会看到Slime的HP减少50点。这只是测试，请在实际游戏中不要使用 <code>&lt;dmg: 50&gt;</code>。</p>
+<h2 id="攻击状态"><a href="#攻击状态" class="headerlink" title="攻击状态"></a>攻击状态</h2><p>创建一个新的事件页，勾选<strong>独立开关A</strong>作为出现条件。在这个页面，我们将建立AI攻击模式。</p>
+<p><img src="https://img.57hmpg.top/file/1784013074738_image.png"></p>
+<p>让事件朝玩家移动3步，然后创建一个带有备注标签<code>&lt;enemyAttack&gt;&lt;dmg:PhysicalAttack&gt;&lt;hitbox:1.5,1.5&gt;</code>的<strong>动态事件</strong>，持续3帧。以等待60帧结束。由于为并行处理，你能看到整个模式都会持续不断地重复。</p>
+<p><img src="https://img.57hmpg.top/file/1784013316137_image.png"></p>
+<p>创建一个名为**Physical Attack（物理攻击）**的技能，并自己设置它。</p>
+<p><img src="https://img.57hmpg.top/file/1784013533956_image.png"></p>
+<h2 id="死亡状态"><a href="#死亡状态" class="headerlink" title="死亡状态"></a>死亡状态</h2><p>现在已经制作了一个会追着你打的Slime，那么最后一步就是决定它HP归零时发生的事件。</p>
+<p>创建一个新的页面，勾选任意一个独立开关，这个页面必须是最后一个。插入一个内容为<code>&lt;death&gt;</code>的注释（或者你喜欢的别的标签）。可以在这里随便做些什么，例如，在事件命令将Slime从地图清除前，给它播放一个死亡动画。</p>
+<p><img src="https://img.57hmpg.top/file/1784013561216_image.png"></p>
+<p>创建一个名为<strong>Enemy Death Check（敌人死亡检测）<strong>的公共事件，使用条件分歧</strong>HP(this) &lt;&#x3D; 0</strong>来检测Slime的HP是否归零。如果返回为true，则调用独立开关操作事件命令，并进入<code>&lt;death&gt;</code>。它会自动跳转到具有注释<code>&lt;death&gt;</code>的页面。</p>
+<p><img src="https://img.57hmpg.top/file/1784013579621_image.png"></p>
+<p>最后是将 <strong>Enemy Death Check</strong> 加入被动中，放在事件仍然存活的页面。</p>
+<p><img src="https://img.57hmpg.top/file/1784013595429_image.png"></p>
+<p>现在，你已经完成了一个简单的敌人创建。不论事件多么复杂，归根结底都遵循这些基础的步骤。剩下的完全依赖你的创造力和你的事件技术。</p>
+</article>
+<div class="article-footer">
+
+</div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">回顾上一篇</div><a href="/wiki/RMActionCombat/6-range-checking/">范围检测</a></div><div class="item" id="next"><div class="note">接下来阅读</div><a href="/wiki/RMActionCombat/8-setup-a-player/">设定玩家</a></div></section></div>
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>快来参与讨论吧~</p>
+
+    </section>
+    <section class='body cmt-body twikoo'>
+      
+
+<div id="twikoo_container"><svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+    </section>
+  </div>
+
+
+
 <footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">五十七</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
-</aside><div class='float-panel'>
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%8C%E4%BA%BA"><span class="toc-text">创建敌人</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="toc-text">基础配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A2%B0%E6%92%9E%E8%AE%BE%E7%BD%AE"><span class="toc-text">碰撞设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E7%8A%B6%E6%80%81"><span class="toc-text">攻击状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%BB%E4%BA%A1%E7%8A%B6%E6%80%81"><span class="toc-text">死亡状态</span></a></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
   </button>
@@ -578,6 +645,22 @@
 
 
 <!-- optional -->
+
+  <script type="module">
+  const el = document.getElementById('twikoo_container');
+  util.viewportLazyload(el, load_twikoo, false);
+
+  function load_twikoo() {
+    if (!el) return;
+    utils.js('https://gcore.jsdelivr.net/npm/twikoo@1.6/dist/twikoo.all.min.js', {defer: true}).then(function () {
+      const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
+      twikoo.init(Object.assign({"js":"https://gcore.jsdelivr.net/npm/twikoo@1.6/dist/twikoo.all.min.js","envId":"https://57com.netlify.app/.netlify/functions/twikoo"}, {
+        el: '#twikoo_container',
+        path: path,
+      }));
+    });
+  }
+</script>
 
 
 
