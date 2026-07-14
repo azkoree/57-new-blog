@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
   
-  <meta name="robots" content="noindex,follow">
+  
   <meta name="generator" content="Hexo 8.1.2">
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   
@@ -17,15 +17,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
-  <title>标签 - 57之新塔</title>
+  <title>RMActionCombat：范围检测 - 57之新塔</title>
 
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://www.57hmpg.top/tags/">
+    <meta name="description" content="范围检测范围检测让角色检测目标是否在一个特定的范围里。和碰撞检测不同（需要物理上的碰撞箱接触），范围检测关乎感知：敌人发现玩家，炮塔锁定目标，NPC在你接近时作出反应。 **使用场景：**当玩家进入敌人五格范围内就开始追击。守卫只能在一个锥形视野内看到玩家。检测到附近炸弹的传感器。  要使用范围检测，只需在条件分歧调用： checkRange(source, range, target, eyes">
+<meta property="og:type" content="website">
+<meta property="og:title" content="范围检测">
+<meta property="og:url" content="http://www.57hmpg.top/wiki/RMActionCombat/6-range-checking/">
 <meta property="og:site_name" content="57之新塔">
+<meta property="og:description" content="范围检测范围检测让角色检测目标是否在一个特定的范围里。和碰撞检测不同（需要物理上的碰撞箱接触），范围检测关乎感知：敌人发现玩家，炮塔锁定目标，NPC在你接近时作出反应。 **使用场景：**当玩家进入敌人五格范围内就开始追击。守卫只能在一个锥形视野内看到玩家。检测到附近炸弹的传感器。  要使用范围检测，只需在条件分歧调用： checkRange(source, range, target, eyes">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.57hmpg.top/img/favicon.ico">
+<meta property="article:published_time" content="2026-07-14T07:02:55.541Z">
+<meta property="article:modified_time" content="2026-07-14T07:02:55.541Z">
 <meta property="article:author" content="五十七">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://www.57hmpg.top/img/favicon.ico">
@@ -44,91 +48,101 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"http://www.57hmpg.top","author":{"@type":"Person","name":"五十七","sameAs":[],"image":"/img/favicon.ico"},"name":"57之新塔","description":"","url":"http://www.57hmpg.top"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"http://www.57hmpg.top/wiki/RMActionCombat/6-range-checking/","author":{"@type":"Person","name":"五十七","sameAs":[],"image":"/img/favicon.ico"},"name":"范围检测","description":"范围检测范围检测让角色检测目标是否在一个特定的范围里。和碰撞检测不同（需要物理上的碰撞箱接触），范围检测关乎感知：敌人发现玩家，炮塔锁定目标，NPC在你接近时作出反应。\n**使用场景：**当玩家进入敌人五格范围内就开始追击。守卫只能在一个锥形视野内看到玩家。检测到附近炸弹的传感器。\n\n要使用范围检测，只需在条件分歧调用：\ncheckRange(source, range, target, e...","url":"http://www.57hmpg.top/wiki/RMActionCombat/6-range-checking/"}</script>
   
 </head>
 <body>
 
-<div class="l_body index" id="start" layout="tags" type="undefined" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
 
 
-<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/img/favicon.ico" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">57之新塔</div></a></div></header>
+<div class="l_body content" id="start" layout="page" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><div class="icon"><img no-lazy class="icon" src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2779789.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><a class="title" href="/wiki/RMActionCombat/"><div class="main">RMActionCombat</div></a></div></header>
 
 <div class="nav-area">
 
-<nav class="menu dis-select"><a class="nav-item active" title="博客" href="/" style="color:#6c8ad5"><span>博客</span></a><a class="nav-item" title="文档" href="/wiki/" style="color:#6c8ad5"><span>文档</span></a><a class="nav-item" title="关于" href="/about/" style="color:#6c8ad5"><span>关于</span></a></nav>
+<nav class="menu dis-select"><a class="nav-item" title="博客" href="/" style="color:#6c8ad5"><span>博客</span></a><a class="nav-item active" title="文档" href="/wiki/" style="color:#6c8ad5"><span>文档</span></a><a class="nav-item" title="关于" href="/about/" style="color:#6c8ad5"><span>关于</span></a></nav>
 </div>
 <div class="widgets">
-<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" data-filter="/wiki/RMActionCombat/" placeholder="在 RMActionCombat 中搜索..."></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
 
-<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/posts/2623745029/"><span class="title">适配GF行动序列的SV图扩展——SVBattlerAdvance</span></a><a class="item title" href="/posts/3324966676/"><span class="title">适配DotMoveSystem的跟随者演出控制插件——FollowTarget</span></a><a class="item title" href="/posts/1424383834/"><span class="title">GF_3_ItemInfoWindow功能扩展——ItemInfoPatch</span></a><a class="item title" href="/posts/3743369470/"><span class="title">锁定角色左右方向移动的插件——MoveLikeArcade</span></a><a class="item title" href="/posts/256068035/"><span class="title">SceneGlossary的外部Json扩展</span></a><a class="item title" href="/posts/2240232532/"><span class="title">TRP_SkitMZ快速入门</span></a><a class="item title" href="/posts/509061501/"><span class="title">RM小技集</span></a><a class="item title" href="/posts/2485290938/"><span class="title">用TileD画rmmz地图入门</span></a><a class="item title" href="/posts/445594665/"><span class="title">re9主题里昂鼠标光标配布</span></a><a class="item title" href="/posts/839109545/"><span class="title">也许是最适配MZ战斗序列的sv战斗图扩展——BattleMotionMZ</span></a></div></widget>
+
+<widget class="widget-wrapper doc-tree post-list"><div class="widget-body fs14"><a class="link" href="/wiki/RMActionCombat/#start"><span class="toc-text">写在前面</span></a><a class="link" href="/wiki/RMActionCombat/0-how-to-use-tutorials/"><span class="toc-text">如何使用本教程</span></a><a class="link" href="/wiki/RMActionCombat/1-prefab-event/"><span class="toc-text">预置事件</span></a><a class="link" href="/wiki/RMActionCombat/2-dynamic-event/"><span class="toc-text">动态事件</span></a><a class="link" href="/wiki/RMActionCombat/3-passive-feature/"><span class="toc-text">被动功能</span></a><a class="link" href="/wiki/RMActionCombat/4-hitbox/"><span class="toc-text">碰撞箱</span></a><a class="link" href="/wiki/RMActionCombat/5-checking-collision/"><span class="toc-text">碰撞检测</span></a><a class="link active" href="/wiki/RMActionCombat/6-range-checking/"><span class="toc-text">范围检测</span><svg class="active-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M21 11.098v4.993c0 3.096 0 4.645-.734 5.321c-.35.323-.792.526-1.263.58c-.987.113-2.14-.907-4.445-2.946c-1.02-.901-1.529-1.352-2.118-1.47a2.225 2.225 0 0 0-.88 0c-.59.118-1.099.569-2.118 1.47c-2.305 2.039-3.458 3.059-4.445 2.945a2.238 2.238 0 0 1-1.263-.579C3 20.736 3 19.188 3 16.091v-4.994C3 6.81 3 4.666 4.318 3.333C5.636 2 7.758 2 12 2c4.243 0 6.364 0 7.682 1.332C21 4.665 21 6.81 21 11.098" opacity=".5"/><path fill="currentColor" d="M9 5.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5z"/></svg></a></div></widget>
 </div>
 <footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/azkoree" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/></a></div></footer>
 </div></aside><div class="l_main" id="main">
 
-<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/img/favicon.ico" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">57之新塔</div></a></div></header>
 
 
-  
-  
-  
 
-<div class="navbar top"><div class="navbar-blur"><div class="navbar-container"><nav class="post"><a href="/">近期发布</a><a href="/categories/">分类</a><a class="active" href="/tags/">标签</a><a href="/archives/">归档</a></nav></div></div></div>
-  <div class='post-list'>
-    <article class='' id='tags'>
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">文档</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/RMActionCombat/">RMActionCombat</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">更新于：<time datetime="2026-07-14T07:02:55.541Z">2026-07-14</time></span></div></div></div>
+    
+    <div class="bottom only-title">
       
-        <a class='tag' href="/tags/RMMZ/">
-          <span class='name'>RMMZ</span>
-        </a>
-      
-        <a class='tag' href="/tags/%E6%8F%92%E4%BB%B6/">
-          <span class='name'>插件</span>
-        </a>
-      
-        <a class='tag' href="/tags/%E8%87%AA%E5%88%B6/">
-          <span class='name'>自制</span>
-        </a>
-      
-        <a class='tag' href="/tags/%E6%BC%94%E5%87%BA%E5%90%91/">
-          <span class='name'>演出向</span>
-        </a>
-      
-        <a class='tag' href="/tags/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/">
-          <span class='name'>转载文章</span>
-        </a>
-      
-        <a class='tag' href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">
-          <span class='name'>游戏开发</span>
-        </a>
-      
-        <a class='tag' href="/tags/%E4%BA%8B%E4%BB%B6%E5%90%91/">
-          <span class='name'>事件向</span>
-        </a>
-      
-        <a class='tag' href="/tags/%E8%A7%86%E8%A7%89%E5%90%91/">
-          <span class='name'>视觉向</span>
-        </a>
-      
-        <a class='tag' href="/tags/%E5%90%8C%E4%BA%BA/">
-          <span class='name'>同人</span>
-        </a>
-      
-        <a class='tag' href="/tags/%E5%83%8F%E7%B4%A0%E7%94%BB/">
-          <span class='name'>像素画</span>
-        </a>
-      
-        <a class='tag' href="/tags/%E7%B3%BB%E7%BB%9F%E5%90%91/">
-          <span class='name'>系统向</span>
-        </a>
-      
-    </article>
+      <div class="text-area">
+        <h1 class="text title"><span>范围检测</span></h1>
+        
+      </div>
+    </div>
+    
   </div>
+  </div><article class="md-text content"><h1 id="范围检测"><a href="#范围检测" class="headerlink" title="范围检测"></a>范围检测</h1><p><strong>范围检测</strong>让角色检测目标是否在一个特定的范围里。和<strong>碰撞检测</strong>不同（需要物理上的碰撞箱接触），范围检测关乎感知：敌人发现玩家，炮塔锁定目标，NPC在你接近时作出反应。</p>
+<p>**使用场景：**当玩家进入敌人五格范围内就开始追击。守卫只能在一个锥形视野内看到玩家。检测到附近炸弹的传感器。</p>
+<p><img src="https://blogger.googleusercontent.com/img/a/AVvXsEgZJ-ANRtT8K9yWtrZks6i6_Jdzp2aaItRvRBvUHonhbrndas2GAzUN5Pechu8hVw1Ns0bk7481Blwsa-YJJcsCyQ7WMfeyK-L07PEXiA7IJ3lnSjfmwCq3rfBe3H1XlD1U-OPgty6v-ecYgztR7Stl7DTm7MrlJ3c0y8AklbhC7lbYddLHfOJ8LkTgNR3k"></p>
+<p>要使用范围检测，只需在条件分歧调用：</p>
+<p><code>checkRange(source, range, target, eyes, blockRegion, exception)</code></p>
+<p><strong>source</strong>：是谁在检测。</p>
+<p><strong>range</strong>：检测半径（圆形，单位为图块）</p>
+<p><strong>eyes</strong>：（可选）视野范围，单位为角度。</p>
+<p><strong>blockRegion</strong>：（可选）阻断视线的区域ID</p>
+<p><strong>exception</strong>：（可选）带有该标签的事件会被排除在检测之外</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p><a target="_blank" rel="noopener" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi41xC9rDzNkSQaOsUtMdrTQGq4w7INOthKm5-iYpNII5dgMz1SXh_qtCYehG1R3B0eTE6ii765slBZiZsK64A5cVahIYlRxEeZkbYYIde-C3NnMg-WLKUocPLcsySCvHHsSRuw0H7hhx-dLjkRlVhcRM0o3oVjpu23cFdE9pcu2_Q3QDRT_01ovM-_nQoy/s1089/image.png"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi41xC9rDzNkSQaOsUtMdrTQGq4w7INOthKm5-iYpNII5dgMz1SXh_qtCYehG1R3B0eTE6ii765slBZiZsK64A5cVahIYlRxEeZkbYYIde-C3NnMg-WLKUocPLcsySCvHHsSRuw0H7hhx-dLjkRlVhcRM0o3oVjpu23cFdE9pcu2_Q3QDRT_01ovM-_nQoy/s1600/image.png" alt="img"></a></p>
+<p>在敌人的并行处理页面，调用条件分歧</p>
+<p><code>checkRange(this, 5, player)</code></p>
+<p>若玩家走进敌人的5格范围之内，则返回true（右侧敌人）</p>
+<p><code>checkRange(this, 7, player, 90)</code></p>
+<p>敌人仅能检测到玩家在格范围内，且位于朝向敌人当前方向的90度锥形区域内的位置。（左侧敌人）</p>
+<blockquote>
+<p>checkRange(this, 7, player, 90, 10)</p>
+</blockquote>
+<p>现在玩家可以躲在任何区域10的物体后面，即使在锥形区域内也是如此。这像一个墙体的效果。</p>
+</article>
+<div class="article-footer">
+
+</div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">回顾上一篇</div><a href="/wiki/RMActionCombat/5-checking-collision/">碰撞检测</a></div><div class="item" id="next"></div></section></div>
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>快来参与讨论吧~</p>
+
+    </section>
+    <section class='body cmt-body twikoo'>
+      
+
+<div id="twikoo_container"><svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+    </section>
+  </div>
+
 
 
 <footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">五十七</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
-</aside><div class='float-panel'>
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8C%83%E5%9B%B4%E6%A3%80%E6%B5%8B"><span class="toc-text">范围检测</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">示例</span></a></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
   </button>
@@ -622,6 +636,22 @@
 
 
 <!-- optional -->
+
+  <script type="module">
+  const el = document.getElementById('twikoo_container');
+  util.viewportLazyload(el, load_twikoo, false);
+
+  function load_twikoo() {
+    if (!el) return;
+    utils.js('https://gcore.jsdelivr.net/npm/twikoo@1.6/dist/twikoo.all.min.js', {defer: true}).then(function () {
+      const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
+      twikoo.init(Object.assign({"js":"https://gcore.jsdelivr.net/npm/twikoo@1.6/dist/twikoo.all.min.js","envId":"https://57com.netlify.app/.netlify/functions/twikoo"}, {
+        el: '#twikoo_container',
+        path: path,
+      }));
+    });
+  }
+</script>
 
 
 
