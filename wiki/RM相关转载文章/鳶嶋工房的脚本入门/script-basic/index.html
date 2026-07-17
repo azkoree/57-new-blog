@@ -1,0 +1,1325 @@
+
+<!DOCTYPE html><html lang="zh-CN" data-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 8.1.2">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>RM相关转载文章：RMMZ的脚本基础 - 57之新塔</title>
+
+  
+    <meta name="description" content="RMMZ的脚本基础原文：『RPGツクールMZ』スクリプトの使い方基礎 RMMZ使用JavaScript开发。（为简洁，下文简称为js） 一般来说，无需在意，只要使用编辑器中的事件指令就能开发游戏。但总有些细节是事件命令无法顾及的，而且也找不到能解决这些问题的插件。 这种时候，使用脚本写一点js，就能解决很多问题。 另外……在移动路线设置中没有插件指令，所以有时候不得已也会使用脚本，唉唉。 官方帮助">
+<meta property="og:type" content="website">
+<meta property="og:title" content="RMMZ的脚本基础">
+<meta property="og:url" content="http://www.57hmpg.top/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/script-basic/">
+<meta property="og:site_name" content="57之新塔">
+<meta property="og:description" content="RMMZ的脚本基础原文：『RPGツクールMZ』スクリプトの使い方基礎 RMMZ使用JavaScript开发。（为简洁，下文简称为js） 一般来说，无需在意，只要使用编辑器中的事件指令就能开发游戏。但总有些细节是事件命令无法顾及的，而且也找不到能解决这些问题的插件。 这种时候，使用脚本写一点js，就能解决很多问题。 另外……在移动路线设置中没有插件指令，所以有时候不得已也会使用脚本，唉唉。 官方帮助">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.57hmpg.top/img/favicon.ico">
+<meta property="article:published_time" content="2026-07-17T04:31:00.177Z">
+<meta property="article:modified_time" content="2026-07-17T04:31:00.177Z">
+<meta property="article:author" content="五十七">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.57hmpg.top/img/favicon.ico">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"http://www.57hmpg.top/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/script-basic/","author":{"@type":"Person","name":"五十七","sameAs":[],"image":"/img/favicon.ico"},"name":"RMMZ的脚本基础","description":"RMMZ的脚本基础原文：『RPGツクールMZ』スクリプトの使い方基礎\nRMMZ使用JavaScript开发。（为简洁，下文简称为js）\n一般来说，无需在意，只要使用编辑器中的事件指令就能开发游戏。但总有些细节是事件命令无法顾及的，而且也找不到能解决这些问题的插件。\n这种时候，使用脚本写一点js，就能解决很多问题。\n另外……在移动路线设置中没有插件指令，所以有时候不得已也会使用脚本，唉唉。\n官...","url":"http://www.57hmpg.top/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/script-basic/"}</script>
+  
+</head>
+<body>
+
+
+
+<div class="l_body content" id="start" layout="page" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><div class="icon"><img no-lazy class="icon" src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2779789.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><a class="title" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/"><div class="main">RM相关转载文章</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"><a class="nav-item" title="博客" href="/" style="color:#6c8ad5"><span>博客</span></a><a class="nav-item active" title="文档" href="/wiki/" style="color:#6c8ad5"><span>文档</span></a><a class="nav-item" title="关于" href="/about/" style="color:#6c8ad5"><span>关于</span></a></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" data-filter="/wiki/RM相关转载文章/" placeholder="在 RM相关转载文章 中搜索..."></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<widget class="widget-wrapper doc-tree post-list"><div class="widget-header dis-select"><span class="name">前言</span></div><div class="widget-body fs14"><a class="link" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/#start"><span class="toc-text">前言</span></a></div><div class="widget-header dis-select"><span class="name">鳶嶋工房的脚本入门</span></div><div class="widget-body fs14"><a class="link active" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/script-basic/"><span class="toc-text">RMMZ的脚本基础</span><svg class="active-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M21 11.098v4.993c0 3.096 0 4.645-.734 5.321c-.35.323-.792.526-1.263.58c-.987.113-2.14-.907-4.445-2.946c-1.02-.901-1.529-1.352-2.118-1.47a2.225 2.225 0 0 0-.88 0c-.59.118-1.099.569-2.118 1.47c-2.305 2.039-3.458 3.059-4.445 2.945a2.238 2.238 0 0 1-1.263-.579C3 20.736 3 19.188 3 16.091v-4.994C3 6.81 3 4.666 4.318 3.333C5.636 2 7.758 2 12 2c4.243 0 6.364 0 7.682 1.332C21 4.665 21 6.81 21 11.098" opacity=".5"/><path fill="currentColor" d="M9 5.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5z"/></svg></a><a class="link" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/script-mastery/"><span class="toc-text">RMMZ的脚本应用</span></a><a class="link" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/script-js/"><span class="toc-text">从RMMZ开始的 js 入门</span></a><a class="link" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/string/"><span class="toc-text">玩转RMMZ的字符串变量</span></a><a class="link" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/statusbase/"><span class="toc-text">RMMZ的状态显示相关</span></a></div><div class="widget-header dis-select"><span class="name">杂谈</span></div><div class="widget-body fs14"><a class="link" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/RM%E5%B0%8F%E6%8A%80%E9%9B%86/"><span class="toc-text">RM小技集</span></a></div></widget>
+</div>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/azkoree" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/></a></div></footer>
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">文档</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/">RM相关转载文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">更新于：<time datetime="2026-07-17T04:31:00.177Z">2026-07-17</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>RMMZ的脚本基础</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="RMMZ的脚本基础"><a href="#RMMZ的脚本基础" class="headerlink" title="RMMZ的脚本基础"></a>RMMZ的脚本基础</h1><p>原文：<a target="_blank" rel="noopener" href="https://zenn.dev/tonbi/articles/f2953b2c017188">『RPGツクールMZ』スクリプトの使い方基礎</a></p>
+<p>RMMZ使用JavaScript开发。（为简洁，下文简称为js）</p>
+<p>一般来说，无需在意，只要使用编辑器中的事件指令就能开发游戏。但总有些细节是事件命令无法顾及的，而且也找不到能解决这些问题的插件。</p>
+<p>这种时候，使用脚本写一点js，就能解决很多问题。</p>
+<p>另外……在移动路线设置中没有插件指令，所以有时候不得已也会使用脚本，唉唉。</p>
+<p>官方帮助的功能说明中，只说到了“将文本作为js进行求值（执行）”。但光这么写谁懂啊！！</p>
+<p>因此，这里来介绍一些使用脚本的基础知识。</p>
+<p>既然要写js，按理说直接学习js本身就好了，但要到这一步就有点……毕竟有些人的目标并不是要当程序员。</p>
+<p>本文面向这类读者，跳过那些js入门书里的繁杂的内容，希望能达到“直接复制粘贴，然后修改一下数字就差不多了”这种程度。</p>
+<p>想学习js本身的人，请参考以下教程！</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://ja.javascript.info/">JAVASICIPT.INFO 现代JavaScript教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://jsprimer.net/">JavaScript Primer 不迷茫的入门手册</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/ja/docs/Web/JavaScript">JavaScript | MDN</a></li>
+</ul>
+<p>中文的话，也可以</p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/js/js-tutorial.html">JavaScript 教程 | 菜鸟教程</a></p>
+<div class="tag-plugin colorful note" ><div class="body"><p>介绍脚本的页面上写着“可以轻松扩展事件指令”“比插件更轻便”之类的，本文开头也这么说，但实际上使用脚本的门槛相当高。</p><p>虽然可以在什么都不懂的情况下复制粘贴来使用，但即使如此，什么都不知道的话也还是会有些心里没底。</p><p>为了能在使用脚本的时候更有底气，让大家达到”复制粘贴+改造“的程度，接下来我会列出在使用脚本时会遇到的难点。</p></div></div>
+
+
+
+<h2 id="参考的脚本集"><a href="#参考的脚本集" class="headerlink" title="参考的脚本集"></a>参考的脚本集</h2><p>已经有不少公开的许多方便的脚本示例，所以脚本就从示例集拿来用吧。</p>
+<p>这篇文章针对rmmz，不过也姑且准备了rmmv脚本的页面链接。</p>
+<ul>
+<li>村人A <a target="_blank" rel="noopener" href="http://rpgmaker-script-wiki.xyz/mzscriptwiki.php">rmmz脚本参考wiki</a></li>
+<li>村人A <a target="_blank" rel="noopener" href="http://rpgmaker-script-wiki.xyz/mvscriptwiki.php">rmmv脚本参考wiki</a></li>
+<li>トリアコンタン <a target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/1aqY-xzFqT0vnZE-OkfsMYsP9Ud91vWTrBLU-uDkJ-Ls/edit#gid=270496334">rmmz脚本参考</a></li>
+<li>トリアコンタン <a target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/1rOIzDuhLC6IqJPEFciYOmXWL_O7X9-hMValMs7DpWCk/edit#gid=849743907">rmmv插件命令集参考</a></li>
+<li>yuwaka <a target="_blank" rel="noopener" href="https://yuwakas.blog.shinobi.jp/Entry/367/">mz或mv的方便脚本集参考</a></li>
+</ul>
+<p>敬称略</p>
+<h2 id="关于著作权"><a href="#关于著作权" class="headerlink" title="关于著作权"></a>关于著作权</h2><p>别人写的程序，真的可以复制过来用吗，真的不会在意吗？</p>
+<p>在意这一点的人，好眼光！请珍视这份心态，不要随意使用他人作品！</p>
+<p>那么来说说脚本。</p>
+<p>俳句都能被认可拥有著作权，所以你会感到不安。但仅仅几行的程序就能主张著作权的例子，目前我还没有听说过。通常，它们会被认为“只是一段信息，而不是表达思想情感之类的创作”。特别是先前链接的页面，它们就是以“前提就是复制使用”的方式公开的，所以请大胆地复制粘贴吧。</p>
+<p>发布游戏时，不标注著作权信息也可以，不过如果在特别致谢加上脚本集作者名，感觉会更有面子，我也比较喜欢。毕竟一个人开发的话，结尾的制作人员名单会显得很冷清呢。（笑）</p>
+<p>顺带一提，即使是范例集，如果把整个页面复制下来公开，果然还是不行的。</p>
+<p>另外，像插件那样公开脚本时，如果被人提问却答不上来会急得冒汗，所以参考别人的代码时，也要好好理解后再实践！</p>
+<p>此外，明明是自己写的脚本，却答不上别人的提问，这种事也相当常见（笑）</p>
+<h2 id="脚本集的使用方法"><a href="#脚本集的使用方法" class="headerlink" title="脚本集的使用方法"></a>脚本集的使用方法</h2><p>复制脚本，粘贴，然后改一下。</p>
+<p>最开始的时候，就算看不懂什么意思，抱着“能跑起来就算成功”的心态去用，我觉得也ok。</p>
+<p>能贴脚本的地方意外的多，大致可以分为“有返回值”和“无返回值”两种类型。</p>
+<p>返回值有时也可以直接写成“结果”。</p>
+<p>那么基于以上前提，我来介绍一下可以输入脚本的位置。</p>
+<h3 id="事件命令"><a href="#事件命令" class="headerlink" title="事件命令"></a>事件命令</h3><p>首先在地图事件，或者公共事件的执行内容中，或者从敌群的战斗事件中打开的事件命令窗口中，有一个直截了当就叫脚本的按钮。</p>
+<p><img src="https://storage.googleapis.com/zenn-user-upload/545da1ef6053-20211226.png" alt="img"></p>
+<p>[3]-[进阶]-[脚本]</p>
+<p><img src="https://storage.googleapis.com/zenn-user-upload/c678067ba6de-20211226.png" alt="img"></p>
+<p>这里就是按下脚本后出现的窗口，在这里写js，或者直接把代码贴进去。</p>
+<p>顺带一提，里面的<code>alert(&quot;Hello World&quot;);</code>是我随便写的js代码，窗口中央所显示的是右键菜单。之后我会把它写作[脚本]事件指令。</p>
+<p>这个指令没有返回值。</p>
+<h3 id="设定移动路线"><a href="#设定移动路线" class="headerlink" title="设定移动路线"></a>设定移动路线</h3><p>接下来是地图事件或公共事件中的移动路线设定，这里面也有脚本命令。</p>
+<p><img src="https://storage.googleapis.com/zenn-user-upload/e65fbef248c7-20211226.png" alt="img"></p>
+<p>[2]-[移动]-[设定移动路线]</p>
+<p><img src="https://storage.googleapis.com/zenn-user-upload/438af3ec3e07-20211226.png" alt="img"></p>
+<p>[移动命令]-[脚本]</p>
+<p><img src="https://storage.googleapis.com/zenn-user-upload/027bad898a08-20211226.png" alt="img"></p>
+<p>虽然看起来很小，但功能和脚本时间命令基本一样，也能打开右键菜单。之后我会把它写作[脚本]移动命令。</p>
+<p>没有返回值。</p>
+<h2 id="自定义移动路线"><a href="#自定义移动路线" class="headerlink" title="自定义移动路线"></a>自定义移动路线</h2><p>接下来是地图事件的自主移动的脚本。</p>
+<p><img src="https://storage.googleapis.com/zenn-user-upload/bd8c0191cded-20211226.png" alt="img">选择[自主移动]-[类型]-[自定义]出现[路线]</p>
+<p><img src="https://storage.googleapis.com/zenn-user-upload/4148fd1d902b-20211226.png" alt="img"></p>
+<p>和设置移动路线事件命令里的脚本基本一样，最大的区别就是不能指定左上角的目标角色。之后我会称其为[脚本]移动指令。</p>
+<p>咦，这不是和之前那个一样吗？</p>
+<p>确实。只在必要时候我会写成自主移动的脚本。</p>
+<p>没有返回值。</p>
+<h3 id="变量操作"><a href="#变量操作" class="headerlink" title="变量操作"></a>变量操作</h3><p>接下来在地图事件、公共事件或战斗事件里打开事件命令，找到变量操作，里面也有脚本。</p>
+<p><img src="https://storage.googleapis.com/zenn-user-upload/74502f4cac16-20211226.png" alt="img"></p>
+<p>[1]-[游戏进程]-[变量操作]</p>
+<p><img src="https://storage.googleapis.com/zenn-user-upload/5f86cd46c148-20211226.png" alt="img"></p>
+<p>[操作数]-[脚本]</p>
+<p>之后，我会称其为变量的脚本。</p>
+<p>它有返回值，会把返回值设置到你指定的变量里。</p>
+<h3 id="条件分岐"><a href="#条件分岐" class="headerlink" title="条件分岐"></a>条件分岐</h3><p>最后在地图事件、公共事件或战斗事件打开事件指令窗口，里面也有脚本</p>
+<p><img src="https://storage.googleapis.com/zenn-user-upload/c1e19985829b-20211226.png" alt="img"></p>
+<p>[1]-[流程控制]-[条件分岐]</p>
+<p><img src="https://storage.googleapis.com/zenn-user-upload/eb9ce53168f1-20211226.png" alt="img"></p>
+<p>[4]-[脚本]</p>
+<p>之后我会称其为条件的脚本。</p>
+<p>它有返回值，会根据返回值来进行条件分歧。</p>
+<h3 id="计算公式"><a href="#计算公式" class="headerlink" title="计算公式"></a>计算公式</h3><p>好吧，其实还有一个！</p>
+<p>实际上，伤害公式那里就是js脚本。</p>
+<p>可以直接用已经自带值的a和b（使用者和对象）。另外，虽然不是js功能，但作为计算公式特有的功能，还可以把<code>v[n]</code>当变量来用。</p>
+<p>它有返回值，会作为造成的伤害数值。</p>
+<p>那么到此结束！</p>
+<p>去逛逛我介绍的那些网站，然后找些有趣的脚本复制粘贴玩玩吧！</p>
+<p>话虽如此，虽然在这可以结束了，但这次的文章，从这里开始才是重头戏。</p>
+<hr>
+<p>为了为今后进一步扩大适用范围做个铺垫，我会适当加上<a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/index.md">rmmz 非官方js参考</a>的链接，不过没必要一个个去翻看。</p>
+<p>等你把这页从头到尾读一遍，对写脚本有了一定程度的习惯后，再去看那个参考手册比较好。</p>
+<p>另外，我觉得很多地方不达到一定的熟练度是看不懂的，所以跳着读就行了。</p>
+<h2 id="关于脚本写法中那些让人在意的细节"><a href="#关于脚本写法中那些让人在意的细节" class="headerlink" title="关于脚本写法中那些让人在意的细节"></a>关于脚本写法中那些让人在意的细节</h2><p>看各个地方的脚本时，会发现虽然说明差不多，但写法上却有微妙的差别。</p>
+<p>我觉得如果不讲清楚，有些人可能会不安，所以我来解释一下几个典型的地方。</p>
+<h3 id="字母的大小写"><a href="#字母的大小写" class="headerlink" title="字母的大小写"></a>字母的大小写</h3><p>js是严格区分字母大小写的！所以 <code>a</code> 和 <code>A</code> 是两个不同的东西。</p>
+<p>虽然标识符的大小写不同不会带来功能上的差异，但在js里，作为一种书写惯例，大致有以下几种：</p>
+<table>
+<thead>
+<tr>
+<th>标识符示例</th>
+<th>说明</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>SampleValue</code></td>
+<td>首字母大写，后面用大写字母分隔单词</td>
+<td>类（class）</td>
+</tr>
+<tr>
+<td><code>sampleValue</code></td>
+<td>首字母小写，后面用大写字母分隔单词</td>
+<td>变量、函数、属性、方法、以及会被赋予可变值的常量</td>
+</tr>
+<tr>
+<td><code>SAMPLE_VALUE</code></td>
+<td>全部大写，用下划线分隔单词</td>
+<td>被赋予固定值（字面量）的常量</td>
+</tr>
+</tbody></table>
+<p>这些“用途”是什么意思看不懂也没关系，总之它们全都是不同的东西，所以要注意别打错大小写。</p>
+<p>果然最安心的办法还是“复制 &amp; 粘贴”！</p>
+<p>另外虽然从js本身来说并非固定的格式，但在rmmz中有如下写法：</p>
+<table>
+<thead>
+<tr>
+<th>标识符示例</th>
+<th>说明</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Sample_Value</code></td>
+<td>首字母大写，用下划线分隔单词</td>
+<td>核心脚本里的类</td>
+</tr>
+<tr>
+<td><code>_sampleValue</code></td>
+<td>下划线开头，后面首字母小写并用大写分隔单词</td>
+<td>类内部使用的属性</td>
+</tr>
+<tr>
+<td><code>$sampleValue</code></td>
+<td><code>$</code> 符号开头，后面首字母小写并用大写分隔单词</td>
+<td>全局变量</td>
+</tr>
+</tbody></table>
+<p>关于这些的详细内容，我会在别的地方再解释。</p>
+<h3 id="关于脚本末尾的"><a href="#关于脚本末尾的" class="headerlink" title="关于脚本末尾的 ;"></a>关于脚本末尾的 <code>;</code></h3><p>看各处介绍的脚本时，会发现有的末尾有 <code>;</code>，有的没有。</p>
+<p>你可能会担心“到底需不需要？没有行不行？”，但基本上<strong>是不需要的！</strong></p>
+<p>那么 <code>;</code> 是什么呢？它是“用来分隔脚本的东西”。而且写在脚本里的js都很短，所以大部分情况下没有分隔符也能正常运行。</p>
+<p>反过来，像移动路线、条件分歧、计算式这些地方，通常只能写一行，但加上 <code>;</code> 之后，就可以把多行“叠”在一起写。</p>
+<p>如果有返回值的话，会返回最后一个分隔的结果。</p>
+<p>比如在变量操作的脚本里写下下面这样，就会按 <code>;</code> 的每个分隔顺序执行，并返回最后一个分隔的结果 <code>20</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const a = 4;a * a + a;</span><br></pre></td></tr></table></figure>
+
+<p>我个人经常写比较长的脚本，所以在那种情况下我都会加上 <code>;</code>。</p>
+<p>写短脚本的时候我也会习惯性地加上，所以在这个页面里基本上都会带着 <code>;</code> 来写！</p>
+<p>结论：加上分号的话，看起来会比较像专业人士啦 ;（分号）</p>
+<h2 id="关于引号"><a href="#关于引号" class="headerlink" title="关于引号"></a>关于引号</h2><p>首先，“クォーテーション”这玩意儿是啥啊！——话说，就是引号啦。就是用来括住台词之类的符号。</p>
+<p>在js中，被引号括起来的部分会被解释为与程序代码不同的字符串数据。</p>
+<p>而在脚本里出现的引号有三种。</p>
+<table>
+<thead>
+<tr>
+<th align="left">值与操作</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">‘单引号’</td>
+<td align="left">用来括住字符串</td>
+</tr>
+<tr>
+<td align="left">“双引号”</td>
+<td align="left">用来括住字符串</td>
+</tr>
+<tr>
+<td align="left">`反引号&#96;</td>
+<td align="left">用来括住字符串</td>
+</tr>
+</tbody></table>
+<p>……功能不是一样的嘛！好啦，你先冷静一下。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;想在文本中使用&#x27;单引号&#x27;&quot;</span><br><span class="line">&#x27;反过来&quot;双引号&quot;也想用&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>就像这样，在遇到同一个引号之前，都会被认为是处于被括住的状态，所以就可以把另一种引号写在里面。</p>
+<p>……为了这个而存在两种引号，是不是有点傻？你可能会这么想，但js它就是这样的设计啦！！</p>
+<p>从编程的角度来说，想把程序代码本身当作字符串来写的情况也时有发生，这时候就方便了。</p>
+<p>那么，rmmz游戏本体的脚本，我们称之为<strong>核心脚本</strong>。</p>
+<p>核心脚本中基本上使用的是 <code>&quot;</code>（双引号），所以这里我也用 <code>&quot;</code>。</p>
+<p>尽量把书写格式和核心脚本统一起来，这样在读核心脚本的时候就能没有违和感地读下去（很重要）。</p>
+<p>话说回来，你是不是想问“那反引号呢？”！</p>
+<p>厉害，你还真记住了。这是在js中后来才引入的方式，可以在字符串中间嵌入js的处理，也可以换行，是一种稍微高性能一点的引号。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">`就像这样，可以嵌入编号 $&#123;id&#125;，</span><br><span class="line">也可以直接换行写出来。`</span><br></pre></td></tr></table></figure>
+
+<p>所以，如果把反引号改成双引号或单引号，可能会导致程序无法运行，请注意这一点。</p>
+<p>反过来说，双引号和单引号是不能直接换行的，必须用 <code>\n</code> 这个特殊符号来表示换行。</p>
+<p>顺便一提，你可能会问：<code>true</code>、<code>false</code> 或者数字之类的，没有被引号括起来，这样没问题吗？</p>
+<p>这些是和字符串不同类型的值，所以就直接写。就是这么回事。</p>
+<p>反过来，如果像 <code>&quot;true&quot;</code> 这样用引号括起来，它就会被判断为字符串，然后导致程序无法运行……如果能立刻出问题倒还好，但它往往看起来好像还在正常运作，然后突然就出毛病。所以，没带引号的裸值就直接留着别动，绝对不要加引号！别好心办坏事，千万别加引号！！</p>
+<h2 id="关于注释"><a href="#关于注释" class="headerlink" title="关于注释"></a>关于注释</h2><p>在js中，<code>//</code> 之后直到行末的字符都会被忽略。这部分可以用来写各种注解，这就叫做注释。</p>
+<p>还有用 <code>/*</code> 和 <code>*/</code> 括起来的注释形式，不过我觉得在脚本示例中不太常用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let a = 0;// 这部分是注释</span><br><span class="line">console.log( a );/* 这部分也是注释</span><br><span class="line">这里还可以换行！ */</span><br></pre></td></tr></table></figure>
+
+<p>注释在执行时会被忽略，所以可以不复制，或者复制之后删掉也没关系。</p>
+<p>当然，既然会被忽略，就那么留着也行，或者按自己的喜好随便改写里面的文字也可以。</p>
+<h2 id="关于脚本中的空白（空格）"><a href="#关于脚本中的空白（空格）" class="headerlink" title="关于脚本中的空白（空格）"></a>关于脚本中的空白（空格）</h2><p>脚本里各处都会出现空格，看起来好像有某种规律，但实际上每个脚本的写法都有微妙的不同。</p>
+<p>其实<strong>并没有什么规律，全凭个人喜好加的！</strong></p>
+<p>大家通常都以为编程必须写得很严谨，所以这还挺让人吃惊的吧。</p>
+<p>不过，单词（也就是所谓的标识符）中间是不能插入空格的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func ( 12 + 1 , &quot;文本&quot; ) ;</span><br></pre></td></tr></table></figure>
+
+<p>即使把这里的空格去掉，写成下面这样，意思也是一样的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func(12+1,&quot;文字&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>另外，全角空格不能用在脚本代码中。但可以用在字符串数据或者注释里面。</p>
+<details class="tag-plugin colorful folding" ><summary><p>杂谈</p>
+</summary><div class="body"><p>就我个人而言，大概是这样的风格：「单词前后、逗号等分隔符号的后面、括号内侧、数学符号前后加空格」，以及「函数、方法、控制语句和 ( 之间不加空格」。</p> <p><code>func( 12 + 1, &quot;文本&quot; );</code></p> <p>说实话，这些地方其实都无所谓，但如果不事先定好，每次写的时候都会纠结“到底要不要加空格呢”，白白浪费时间，真的是纯属浪费。</p> <p>程序员通常都会定好规则再写，多人协作的时候更是会统一规则（有时甚至是整个公司统一）。</p> <p>在最近的开发环境中，大多都可以在设置里详细指定空格的添加方式，然后自动帮你格式化代码。真方便！</p> <p>即使看不懂js，如果看一个插件的内容发现空格的用法没有一致性，那基本上可以断定它的js写法也很随意。</p> <p>请用这个标准去判断插件的质量。至于我的插件嘛，“因为开发环境会自动整理，所以很整洁！”（笑）</p> </div></details>
+
+
+
+<h2 id="关于方法、属性、数组和对象"><a href="#关于方法、属性、数组和对象" class="headerlink" title="关于方法、属性、数组和对象"></a>关于方法、属性、数组和对象</h2><p>……什么鬼？你肯定会这么想。</p>
+<p>用脚本的时候，有时候会遇到明明在做类似的事情，写法却微妙地不一样的情况</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$gameMessage._positionType = 2;</span><br><span class="line">$gameMessage.setPositionType( 2 );</span><br></pre></td></tr></table></figure>
+
+<p>看起来这两行都想给 positionType 设置成 2，那这个区别使用到底是怎么回事呢？</p>
+<p>另外括号也是，有用 <code>[]</code> 的，有用 <code>()</code> 的…完全搞不懂对吧。</p>
+<p>这个解释起来非常麻烦，主要原因大概有两个：</p>
+<ul>
+<li>强行使用了没有设想会让用户去用的部分。</li>
+<li>本来就没有什么特别的理由，就是用了不同的写法。</li>
+</ul>
+<p>我觉得rmmz在区分使用上算是比较没有条理的（个人感想）。</p>
+<p>因为编程嘛，这方面不统一也能跑啊！它就是能跑起来！！</p>
+<p>要说细节的话，也有那种“不这么写就不行”的场景，但解释起来又琐碎又长，我觉得也听不懂。</p>
+<p>所以，这里的结论就是：“就当是那么回事吧，别太纠结了！” —— 就这么定了！！</p>
+<p>因为存在叫做“方法”、“属性”、“数组”、“对象”的机制，各自的写法都不一样。</p>
+<p>关于这些术语，你暂时先理解到“哦，有这种东西啊”这个程度就可以了。</p>
+<p>等你想认真学js的时候，再去查吧。</p>
+<h2 id="关于-this"><a href="#关于-this" class="headerlink" title="关于 this"></a>关于 this</h2><p>脚本里经常会出现 <code>this</code> 这个词，但要解释它到底是什么，还挺麻烦的。</p>
+<p>净是些麻烦事儿呢。</p>
+<p>仅限在rmmz的脚本里来说，它是一个根据你写脚本的位置不同，内容也会跟着变的变量。</p>
+<table>
+<thead>
+<tr>
+<th align="left">脚本位置</th>
+<th align="left"><code>this</code> 的值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">事件指令</td>
+<td align="left"><code>Game_Interpreter</code></td>
+</tr>
+<tr>
+<td align="left">移动指令</td>
+<td align="left"><code>Game_Player</code> 或 <code>Game_Event</code></td>
+</tr>
+<tr>
+<td align="left">变量操作</td>
+<td align="left"><code>Game_Interpreter</code></td>
+</tr>
+<tr>
+<td align="left">条件分支</td>
+<td align="left"><code>Game_Interpreter</code></td>
+</tr>
+</tbody></table>
+<p><code>Game_Interpreter</code> 是处理事件指令的机制。</p>
+<p><code>Game_Player</code> 是 [玩家] 角色。</p>
+<p><code>Game_Event</code> 顾名思义就是 [事件]。</p>
+<p>所以，即便是同一个 <code>this</code>，在不同位置也拥有完全不同的性质。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/Game_Interpreter.md">参考: Game_Interpreter</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/Game_Player.md">参考: Game_Player</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/Game_Event.md">参考: Game_Event</a></p>
+<div class="tag-plugin colorful note" ><div class="body"><p>具体来说就是，含有 <code>this</code> 的脚本如果写在别的位置，大概率是没法运行的。</p><p>因为会出现 <strong>“明明写的内容完全没错，可就是跑不起来”</strong> 的情况，所以很难找到原因。</p><p>请确认好脚本是给事件指令用的，还是给移动指令用的，然后再使用！</p><p>如果没有特别说明，基本上可以认为是给事件指令用的，基本不会错。</p><p>另外，如果是给 [变量操作] 或 [条件分支] 用的脚本，我觉得应该会有所说明（不会不写的）。</p></div></div>
+
+<h2 id="RPG-Maker-MZ-中常见的模式"><a href="#RPG-Maker-MZ-中常见的模式" class="headerlink" title="RPG Maker MZ 中常见的模式"></a>RPG Maker MZ 中常见的模式</h2><p>虽然从js本身来说没什么特别的意思，但我会介绍一些rmmz特有的、知道了就能加深理解的信息。</p>
+<h3 id="小键盘对应"><a href="#小键盘对应" class="headerlink" title="小键盘对应"></a>小键盘对应</h3><p>在rmmz中，指定角色的朝向或移动方向等时，会使用数字。</p>
+<p>小键盘 | 方向</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">7</td>
+<td align="center">8</td>
+<td align="center">9</td>
+<td align="center">↖︎</td>
+<td align="center">↑</td>
+<td align="center">↗️</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">5</td>
+<td align="center">6</td>
+<td align="center">←</td>
+<td align="center">・</td>
+<td align="center">→</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">↙︎</td>
+<td align="center">↓</td>
+<td align="center">↘︎</td>
+</tr>
+</tbody></table>
+<p>就是这样对应的，比如数字 4 就是 ← 方向。顺便一提，数字 5 基本上会被忽略。</p>
+<p>这个知道了的话还挺好懂的，但如果不知道，我觉得就很难消除“为什么 4 是左？”这样的疑问了。</p>
+<h3 id="以-开头的标识符"><a href="#以-开头的标识符" class="headerlink" title="以 $ 开头的标识符"></a>以 $ 开头的标识符</h3><p>看脚本的时候，会时不时碰到以 <code>$</code> 开头的标识符。</p>
+<p>这在js本身中并没有什么特殊含义，是核心脚本独有的一个规则，用来表示这是一个全局变量。</p>
+<p>全局变量无论是在 [脚本] 事件指令、移动路线设置里的 [脚本]、变量的 [脚本]，还是条件的 [脚本] 中，都可以同样地使用。</p>
+<p>另外，在测试游戏时按 [F8] 键调出的 [开发者工具] 的 [控制台] 里，也可以使用它们。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/global.md">参考：全局变量一览</a></p>
+<h3 id="以大写字母开头的标识符"><a href="#以大写字母开头的标识符" class="headerlink" title="以大写字母开头的标识符"></a>以大写字母开头的标识符</h3><p>除了以 <code>$</code> 开头的标识符之外，还有一些全局可用的东西是以大写字母开头的标识符。<br>这在js本身中也没什么特别的意思，但几乎所有人都在遵守，所以可以说是事实上的标准。<br>rmmz主要有以下这些</p>
+<table>
+<thead>
+<tr>
+<th>标识符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/AudioManager.md">AudioManager</a></td>
+<td>音频环境的管理</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/BattleManager.md">BattleManager</a></td>
+<td>战斗的管理</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/ColorManager.md">ColorManager</a></td>
+<td>颜色数据的管理</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/ConfigManager.md">ConfigManager</a></td>
+<td>设置的管理</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/DataManager.md">DataManager</a></td>
+<td>数据输入的管理</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/EffectManager.md">EffectManager</a></td>
+<td>特效的管理</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/FontManager.md">FontManager</a></td>
+<td>字体的管理</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/ImageManager.md">ImageManager</a></td>
+<td>图像数据的管理</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/PluginManager.md">PluginManager</a></td>
+<td>插件的管理</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/SceneManager.md">SceneManager</a></td>
+<td>场景的管理</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/SoundManager.md">SoundManager</a></td>
+<td>声音数据的管理</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/StorageManager.md">StorageManager</a></td>
+<td>存档数据的管理</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/TextManager.md">TextManager</a></td>
+<td>文本的管理</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/Graphics.md">Graphics</a></td>
+<td>图像的处理</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/Input.md">Input</a></td>
+<td>手柄・键盘输入的处理</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/TouchInput.md">TouchInput</a></td>
+<td>鼠标・触摸输入的处理</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/Utils.md">Utils</a></td>
+<td>其他处理</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/Video.md">Video</a></td>
+<td>视频的处理</td>
+</tr>
+</tbody></table>
+<div class="tag-plugin colorful note" ><div class="body"><p>除此之外，还有其他以大写字母开头的全局可用标识符，不过主要的应该就是这些了。</p></div></div>
+
+<h3 id="以-开头的标识符-1"><a href="#以-开头的标识符-1" class="headerlink" title="以 _ 开头的标识符"></a>以 _ 开头的标识符</h3><p>看脚本的时候，会时不时碰到以 <code>_</code> 开头的标识符。</p>
+<p>这在js本身中并没有什么特殊含义，是核心脚本独有的一个规则，用来表示这是一个局部性质的值。</p>
+<p>虽然说是“局部”，但实际上并不是只能局部使用，它的意思大概只是比较宽松地提醒一下：“带 <code>_</code> 的，大家尽量别用哦”，仅此而已。</p>
+<p>（顺便一提，带 <code>$</code> 的全局变量确实可以全局使用，但并不是因为带了 <code>$</code> 所以就能全局用，只是核心脚本采用了给全局变量加上 <code>$</code> 这个规则而已。）</p>
+<p>这是因为js缺乏把东西真正局部隐藏起来的手段，所以只能用“提个请求”这种方式来凑合，是个挺悲伤的理由。</p>
+<p>实际上，大家并没有太在意，还是用得很欢的（笑）。</p>
+<p>但是，如果同时存在 <code>_name</code> 和 <code>name()</code> 并且都能取到相同的值，那么使用后者 <code>name()</code> 才是正规方法，而且两者的行为有时也会不一样。</p>
+<p>比如，取到的值可能会被转换成整数之类的，就是这样的区别。</p>
+<p>反过来，如果不需要那种额外的处理，有时也会故意直接用 <code>_name</code>。</p>
+<p>另外，有时候虽然有 <code>_name</code>，但核心脚本里并没有准备 <code>name()</code>，这种情况下就只能用 <code>_name</code> 了。</p>
+<p>真是够复杂的呢。</p>
+<p>顺便一提，标识符末尾如果带有表示复数的 <code>s</code>，手抄的时候也容易漏掉，所以这点也要注意。</p>
+<p>结论就是：如果你用复制粘贴的方式使用，就不需要在意这些；但如果你要手抄，小心别漏掉那个 <code>_</code>！</p>
+<p>话说回来……标识符这种东西，总之还是尽量用复制粘贴吧！[⌘C] 和 [⌘V] 走起！</p>
+<h2 id="js控制台"><a href="#js控制台" class="headerlink" title="js控制台"></a>js控制台</h2><p>在测试游戏时，按 [F8]（或者 [F12]）键，就会打开[开发者工具]窗口。</p>
+<p>使用这个工具，可以进行各种开发方面的调查。</p>
+<p>其中特别重要的是js控制台。</p>
+<h3 id="打开控制台"><a href="#打开控制台" class="headerlink" title="打开控制台"></a>打开控制台</h3><p>在[帮助] - [辅助工具的使用方法] - [测试游戏]里，只写了一句话“开发者工具的功能与 Google Chrome 内置的工具相同”，就这么甩锅给 Chrome 的帮助文档了！</p>
+<p>去看 <a target="_blank" rel="noopener" href="https://developer.chrome.com/docs/devtools/">Google 官方帮助网站</a>就行了，说没问题倒也没问题……哇哦！This is English！</p>
+<p>所以呢，我推荐<a target="_blank" rel="noopener" href="https://ja.javascript.info/devtools">JAVASICIPT.INFO 开发者控制台</a>这个网站。</p>
+<p>另外，在实际的 Chrome 浏览器中，可以用 [⌥⌘I] 打开开发者工具。用 [⌥⌘J] 的话，可以直接打开js控制台。</p>
+<p>[开发者工具] 的功能非常强大，如果要正经地用js进行开发，它是绕不开的，而且用起来会非常方便！</p>
+<p>不过因为它能做的事情太多了，所以这里我先只挑一些在写[脚本]时知道会比较有用的部分，摘出来介绍给大家。</p>
+<p>用 [F8] 打开的[开发者工具]中，写着 [Console] 的那个标签页就是js控制台。</p>
+<p><img src="https://storage.googleapis.com/zenn-user-upload/a74f08d7bcec-20211226.png" alt="img"></p>
+<blockquote>
+<p>DevTools failed to load SourceMap: Could not load content for chrome-extension:&#x2F;&#x2F;njgcanhfjdabfmnlmpmdedalocpafnhl&#x2F;js&#x2F;libs&#x2F;pixi.js.map: System error: net::ERR_FILE_NOT_FOUND</p>
+</blockquote>
+<p>会显示这样一条信息对吧。</p>
+<p>这个信息根据环境（OS 或 NW.js 的版本）不同，显示上可能会有些差异，但总之就是告诉你 “pixi.js.map” 这个文件不存在。</p>
+<p><code>&lt;Bad!&gt;</code> 要说这个文件是否需要，其实是不需要的，但就因为能正常运行就把这种错误信息放着不管，我觉得作为产品来说有点不太好。</p>
+<div class="tag-plugin colorful note" ><div class="body"><p>NW.js 是一种应用，为了让rmmz的游戏能以应用程序的形式运行，而提供接近浏览器环境的运行环境。</p></div></div>
+
+<details class="tag-plugin colorful folding" ><summary><p>小知识</p>
+</summary><div class="body"><p>“pixi.js.map” 这个文件，里面装的是在发布时不需要、但在开发时需要的信息，也就是用于关联相关信息的东西。</p> <p>rmmz使用了名为 “pixi.js” 的js库（一个集合了可供程序调用的功能的程序），但在用 RPG Maker 开发游戏时，虽然会看到核心脚本，但作为其基础的 pixi.js 库本身的开发是不需要的，所以没有附带 “pixi.js.map” 这个文件。</p> <p>如果在 “pixi.js.map” 文件里写下以下内容，然后把它放到 “js&#x2F;libs&#x2F;“ 文件夹中，上面的错误就不会再出现了。</p> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;sources&quot;: []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> <p>正如你所见，这是一个没什么实际内容的虚拟文件。</p> <p>或者，删除 “js&#x2F;libs&#x2F;“ 文件夹中 “pixi.js” 文件末尾的注释，错误也不会再出现。</p> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//# sourceMappingURL=pixi.js.map</span><br></pre></td></tr></table></figure> <p>另外，对于进行此更改后可能出现的任何问题，我不提供任何保证。</p> <p>话说回来，这篇文章整体都是这样。出了问题我也不管哦！请自行承担责任，please！</p> </div></details>
+
+
+
+<h2 id="运行-JavaScript"><a href="#运行-JavaScript" class="headerlink" title="运行 JavaScript"></a>运行 JavaScript</h2><p>点击控制台中显示 <code>&gt;</code> 的地方，就可以输入并执行 JavaScript。</p>
+<p>试着做一下最基本的计算。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1+1</span><br></pre></td></tr></table></figure>
+
+<p>对于输入的内容，结果会实时显示出来。哦哦，高科技！</p>
+<p>如果是像计算这样只要知道答案就好，那没问题；但如果需要让什么东西动起来，就按 [回车] 键执行。</p>
+<p>注意，图像等画面如果不选中游戏窗口，显示是不会更新的。</p>
+<p>在控制台中，<code>this</code> 里面是（浏览器的）<code>Window</code>。粗略来说，它处于“最外层”的位置。</p>
+<p>在 [脚本] 中不会出现这种状态，所以无法测试含有 <code>this</code> 的脚本。</p>
+<p>这么一来，你可能会觉得没法测试脚本了，但请回想一下：带 <code>$</code> 的全局变量等是可以随处使用的。</p>
+<p>没错，如果是全局变量，就可以在控制台中执行。</p>
+<p>没必要每次都在 [脚本] 事件指令里写好，然后测试游戏，再去触发 [执行内容]！</p>
+<p>如果示例代码是以 <code>$</code> 开头的，那基本上肯定可以在 [控制台] 中执行，所以请灵活运用，多多尝试。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$gamePlayer.setDirection(6);</span><br></pre></td></tr></table></figure>
+
+<p>在地图上显示着玩家的时候，试着把这个脚本复制粘贴，然后按 [回车] 键执行。</p>
+<p>正如之前所说，别忘了选中游戏窗口！</p>
+<p>怎么样？是不是感觉js离自己近了不少？</p>
+<p>输入过的脚本可以用 [↑] 键调出来，而且js自带的标识符以及《RPG Maker MZ》中定义的标识符都会有自动补全。用 [↑] [↓] 键选择，按 [Tab] 键确定。也可以用鼠标来选。</p>
+<p><code>&lt;Nice!&gt;</code> 超级方便！！</p>
+<p>感觉你已经可以自己批量生产脚本了呢！</p>
+<p>……虽然可能还到不了那个程度吧（笑），但我觉得只是改造一下的话，应该会变得相当轻松。</p>
+<p>开发者工具里还准备了各种用于处理错误的功能……但如果要说明这些，就不是这篇文章的量能搞定的了，所以请自己去搜索讲解这些功能的网站吧！</p>
+<p>老实说，我自己也没有完全掌握这些功能！！</p>
+<p>另外，在rmmz中，开发者工具不能正常工作，所以这里写的步骤可能无法执行。但这一页毕竟只是rmmz的解说，敬请谅解。</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>说实话，从“事件指令”到“脚本（JavaScript）”之间的这个过渡部分，对于从 RPG Maker 入门的人来说，几乎完全没有人引导，感觉就像一道相当陡峭的悬崖绝壁。</p>
+<p>它看起来好像近在咫尺，但实际上甚至会让人忍不住想：是不是先好好研究一下插件反而更是一条捷径呢？</p>
+<p>话虽如此，既然它好不容易就在眼前，那还是想直接爬上去看看。</p>
+<p>这篇文章虽然还谈不上装了个电梯……但至少楼梯……可能也还算不上，大概也就是在悬崖上敲了个岩钉的程度吧？没敲上？结果拴上绳子一拉，岩钉就掉了？</p>
+<p>嘛……有时候也可能会这样吧。</p>
+<p>当你习惯了脚本的复制粘贴后，请继续阅读<a href="../script-mastery">RMMZ的脚本应用</a>！</p>
+</article>
+<div class="article-footer">
+
+</div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">回顾上一篇</div><a href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/">前言</a></div><div class="item" id="next"><div class="note">接下来阅读</div><a href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/script-mastery/">RMMZ的脚本应用</a></div></section></div>
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>快来参与讨论吧~</p>
+
+    </section>
+    <section class='body cmt-body twikoo'>
+      
+
+<div id="twikoo_container"><svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+    </section>
+  </div>
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">五十七</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RMMZ%E7%9A%84%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80"><span class="toc-text">RMMZ的脚本基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E7%9A%84%E8%84%9A%E6%9C%AC%E9%9B%86"><span class="toc-text">参考的脚本集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%91%97%E4%BD%9C%E6%9D%83"><span class="toc-text">关于著作权</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E9%9B%86%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">脚本集的使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%91%BD%E4%BB%A4"><span class="toc-text">事件命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E5%AE%9A%E7%A7%BB%E5%8A%A8%E8%B7%AF%E7%BA%BF"><span class="toc-text">设定移动路线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%A7%BB%E5%8A%A8%E8%B7%AF%E7%BA%BF"><span class="toc-text">自定义移动路线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E6%93%8D%E4%BD%9C"><span class="toc-text">变量操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B2%90"><span class="toc-text">条件分岐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="toc-text">计算公式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%84%9A%E6%9C%AC%E5%86%99%E6%B3%95%E4%B8%AD%E9%82%A3%E4%BA%9B%E8%AE%A9%E4%BA%BA%E5%9C%A8%E6%84%8F%E7%9A%84%E7%BB%86%E8%8A%82"><span class="toc-text">关于脚本写法中那些让人在意的细节</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E6%AF%8D%E7%9A%84%E5%A4%A7%E5%B0%8F%E5%86%99"><span class="toc-text">字母的大小写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%84%9A%E6%9C%AC%E6%9C%AB%E5%B0%BE%E7%9A%84"><span class="toc-text">关于脚本末尾的 ;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%BC%95%E5%8F%B7"><span class="toc-text">关于引号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%B3%A8%E9%87%8A"><span class="toc-text">关于注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E7%A9%BA%E7%99%BD%EF%BC%88%E7%A9%BA%E6%A0%BC%EF%BC%89"><span class="toc-text">关于脚本中的空白（空格）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%96%B9%E6%B3%95%E3%80%81%E5%B1%9E%E6%80%A7%E3%80%81%E6%95%B0%E7%BB%84%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="toc-text">关于方法、属性、数组和对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-this"><span class="toc-text">关于 this</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RPG-Maker-MZ-%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E6%A8%A1%E5%BC%8F"><span class="toc-text">RPG Maker MZ 中常见的模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E9%94%AE%E7%9B%98%E5%AF%B9%E5%BA%94"><span class="toc-text">小键盘对应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A5-%E5%BC%80%E5%A4%B4%E7%9A%84%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="toc-text">以 $ 开头的标识符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A5%E5%A4%A7%E5%86%99%E5%AD%97%E6%AF%8D%E5%BC%80%E5%A4%B4%E7%9A%84%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="toc-text">以大写字母开头的标识符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A5-%E5%BC%80%E5%A4%B4%E7%9A%84%E6%A0%87%E8%AF%86%E7%AC%A6-1"><span class="toc-text">以 _ 开头的标识符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js%E6%8E%A7%E5%88%B6%E5%8F%B0"><span class="toc-text">js控制台</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E6%8E%A7%E5%88%B6%E5%8F%B0"><span class="toc-text">打开控制台</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C-JavaScript"><span class="toc-text">运行 JavaScript</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+  <script type="module">
+  const el = document.getElementById('twikoo_container');
+  util.viewportLazyload(el, load_twikoo, false);
+
+  function load_twikoo() {
+    if (!el) return;
+    utils.js('https://gcore.jsdelivr.net/npm/twikoo@1.6/dist/twikoo.all.min.js', {defer: true}).then(function () {
+      const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
+      twikoo.init(Object.assign({"js":"https://gcore.jsdelivr.net/npm/twikoo@1.6/dist/twikoo.all.min.js","envId":"https://57com.netlify.app/.netlify/functions/twikoo"}, {
+        el: '#twikoo_container',
+        path: path,
+      }));
+    });
+  }
+</script>
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img, .md-text img:not([class]), .md-text .image img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>

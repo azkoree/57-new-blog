@@ -1,0 +1,1186 @@
+
+<!DOCTYPE html><html lang="zh-CN" data-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 8.1.2">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>RM相关转载文章：从RMMZ开始的 js 入门 - 57之新塔</title>
+
+  
+    <meta name="description" content="从RMMZ开始的 js 入门原文：『RPGツクールMZ』で始めるJavaScript入門 通过以上两篇文章，我想大家应该已经能够使用脚本事件命令了（下文将以此为前提进行说明）。 但是，也有人虽然能用，却不明白为什么能运行，对 js 的基本部分一知半解而感到不踏实吧。  现代 JavaScript 教程 JavaScript Primer 不迷茫的入门书 JavaScript | MDN  虽然读了">
+<meta property="og:type" content="website">
+<meta property="og:title" content="从RMMZ开始的 js 入门">
+<meta property="og:url" content="http://www.57hmpg.top/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/script-js/">
+<meta property="og:site_name" content="57之新塔">
+<meta property="og:description" content="从RMMZ开始的 js 入门原文：『RPGツクールMZ』で始めるJavaScript入門 通过以上两篇文章，我想大家应该已经能够使用脚本事件命令了（下文将以此为前提进行说明）。 但是，也有人虽然能用，却不明白为什么能运行，对 js 的基本部分一知半解而感到不踏实吧。  现代 JavaScript 教程 JavaScript Primer 不迷茫的入门书 JavaScript | MDN  虽然读了">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.57hmpg.top/img/favicon.ico">
+<meta property="article:published_time" content="2026-07-17T04:37:08.790Z">
+<meta property="article:modified_time" content="2026-07-17T04:37:08.790Z">
+<meta property="article:author" content="五十七">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.57hmpg.top/img/favicon.ico">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"http://www.57hmpg.top/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/script-js/","author":{"@type":"Person","name":"五十七","sameAs":[],"image":"/img/favicon.ico"},"name":"从RMMZ开始的 js 入门","description":"从RMMZ开始的 js 入门原文：『RPGツクールMZ』で始めるJavaScript入門\n通过以上两篇文章，我想大家应该已经能够使用脚本事件命令了（下文将以此为前提进行说明）。\n但是，也有人虽然能用，却不明白为什么能运行，对 js 的基本部分一知半解而感到不踏实吧。\n\n现代 JavaScript 教程\nJavaScript Primer 不迷茫的入门书\nJavaScript | MDN\n\n虽...","url":"http://www.57hmpg.top/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/script-js/"}</script>
+  
+</head>
+<body>
+
+
+
+<div class="l_body content" id="start" layout="page" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><div class="icon"><img no-lazy class="icon" src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2779789.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><a class="title" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/"><div class="main">RM相关转载文章</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"><a class="nav-item" title="博客" href="/" style="color:#6c8ad5"><span>博客</span></a><a class="nav-item active" title="文档" href="/wiki/" style="color:#6c8ad5"><span>文档</span></a><a class="nav-item" title="关于" href="/about/" style="color:#6c8ad5"><span>关于</span></a></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" data-filter="/wiki/RM相关转载文章/" placeholder="在 RM相关转载文章 中搜索..."></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<widget class="widget-wrapper doc-tree post-list"><div class="widget-header dis-select"><span class="name">前言</span></div><div class="widget-body fs14"><a class="link" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/#start"><span class="toc-text">前言</span></a></div><div class="widget-header dis-select"><span class="name">鳶嶋工房的脚本入门</span></div><div class="widget-body fs14"><a class="link" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/script-basic/"><span class="toc-text">RMMZ的脚本基础</span></a><a class="link" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/script-mastery/"><span class="toc-text">RMMZ的脚本应用</span></a><a class="link active" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/script-js/"><span class="toc-text">从RMMZ开始的 js 入门</span><svg class="active-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M21 11.098v4.993c0 3.096 0 4.645-.734 5.321c-.35.323-.792.526-1.263.58c-.987.113-2.14-.907-4.445-2.946c-1.02-.901-1.529-1.352-2.118-1.47a2.225 2.225 0 0 0-.88 0c-.59.118-1.099.569-2.118 1.47c-2.305 2.039-3.458 3.059-4.445 2.945a2.238 2.238 0 0 1-1.263-.579C3 20.736 3 19.188 3 16.091v-4.994C3 6.81 3 4.666 4.318 3.333C5.636 2 7.758 2 12 2c4.243 0 6.364 0 7.682 1.332C21 4.665 21 6.81 21 11.098" opacity=".5"/><path fill="currentColor" d="M9 5.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5z"/></svg></a><a class="link" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/string/"><span class="toc-text">玩转RMMZ的字符串变量</span></a><a class="link" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/statusbase/"><span class="toc-text">RMMZ的状态显示相关</span></a></div><div class="widget-header dis-select"><span class="name">杂谈</span></div><div class="widget-body fs14"><a class="link" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/RM%E5%B0%8F%E6%8A%80%E9%9B%86/"><span class="toc-text">RM小技集</span></a></div></widget>
+</div>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/azkoree" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/></a></div></footer>
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">文档</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/">RM相关转载文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">更新于：<time datetime="2026-07-17T04:37:08.790Z">2026-07-17</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>从RMMZ开始的 js 入门</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="从RMMZ开始的-js-入门"><a href="#从RMMZ开始的-js-入门" class="headerlink" title="从RMMZ开始的 js 入门"></a>从RMMZ开始的 js 入门</h1><p>原文：<a target="_blank" rel="noopener" href="https://zenn.dev/tonbi/articles/95c909a5fa3e03#this%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">『RPGツクールMZ』で始めるJavaScript入門</a></p>
+<p>通过以上两篇文章，我想大家应该已经能够使用脚本事件命令了（下文将以此为前提进行说明）。</p>
+<p>但是，也有人虽然能用，却不明白为什么能运行，对 js 的基本部分一知半解而感到不踏实吧。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://ja.javascript.info/">现代 JavaScript 教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://jsprimer.net/">JavaScript Primer 不迷茫的入门书</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/ja/docs/Web/JavaScript">JavaScript | MDN</a></li>
+</ul>
+<p>虽然读了上面推荐的那些网站，但总觉得还是不太明白，甚至无从下手。</p>
+<p>或者说，“反正 HTML 什么的怎样都无所谓啊！为什么非得从那里开始学啊！傻了吗！”——我想也有人这么想吧。</p>
+<p>这些推荐的网站其实是相对不涉及 HTML、只写 js 部分的那一类，但反过来可能正因为这样反而让人看不懂。</p>
+<p>另外，这些网站本身的信息是可靠的，写得也相当通俗易懂，所以在学习 js 时完全可以充分利用。只是没有考虑到 rmmz 的情况而已。</p>
+<p>因此，我决定写一篇从 rmmz 入手学习 js 的入门文章。</p>
+<p>本文将主要围绕脚本事件命令的使用方法，在 rmmz 编辑器上进行说明。</p>
+<p>制作插件时也基本可以使用相同的脚本，所以想制作插件的人也可以参考，但本文不会描述插件中的 js 相关内容。</p>
+<p>顺便一提，rmmz 官方的“最速 js 讲座”是作为插件入门的一部分编写的，但作为连接 js 与 rmmz 的部分，内容相对简短易懂，因此推荐阅读。</p>
+<p>话说回来，本文的目标是让大家能够读懂下面链接的参考文档。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/README.md">rmmz 非官方 js 参考文档</a></p>
+<p>所谓“能够使用”，目标仅限于简单的内容。因为要想全部都能使用，需要直接阅读并理解核心脚本。</p>
+<p>而且，我自己也无法全部使用，所以没法说明（笑）。</p>
+<p>另外，下文介绍的各网站作者名均省略敬称。</p>
+<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>以下内容也在<a href="./script-mastery">rmmz脚本应用</a>中写过，但最后又补充了几点。遇到不认识的术语时请参考。</p>
+<p><strong>数组</strong>：给值编号并排列而成的值。示例：<code>[ 10, 4, 6 ]</code>（这里排列的是数字作为值，也可以排列其他类型的值）。</p>
+<p><strong>索引</strong>：从数组（保存数组的变量）中取出值时使用的数字。示例：<code>array[ 0 ]</code>（js 数组的索引从 0 开始）。</p>
+<p><strong>字符串</strong>：字符排列而成的值。在 js 中对应 <code>String</code> 类型。也可以看作是每个元素被固定为一个字符的数组。示例：<code>&quot;这是字符串&quot;</code></p>
+<p><strong>布尔值</strong>：取真（正・ON）和假（负・OFF）两种状态的值。在 js 中对应 <code>Boolean</code> 类型，两个值分别表示为 <code>true</code> 和 <code>false</code>。</p>
+<p><strong>逻辑运算</strong>：计算结果返回布尔值的运算。包括判断数值大小等的条件表达式。</p>
+<p><strong>变量</strong>：用于保存值。js 中的变量与 rmmz 中的变量大致相同。定义示例：<code>let variable;</code> 以前定义变量使用 <code>var</code> 而非 <code>let</code>，但由于 <code>var</code> 存在较多问题，现在（2022 年）已不太常用。反过来，如果看到代码中使用 <code>var</code>，即使是初学者也能轻易判断出这是旧代码。另外，在 rmmz 中，核心脚本已经废弃了 <code>var</code>。</p>
+<p><strong>常量</strong>：与变量大致相同，但一旦设定值后便无法更改。乍看似乎不便，但实际上比变量更便利，在实际编程中几乎不需要使用变量。定义示例：<code>const constant = 1;</code></p>
+<p><strong>函数</strong>：将处理过程汇总而成的结构。与 rmmz 的公共事件大致相同，但由于具有参数和返回值，使用起来更为方便。另外，脚本事件命令也可以编写多个处理，因此也可以说是一种函数；在变量操作中的脚本选项等地方也存在返回值。js 由于历史原因，函数的定义方式非常多，这一点比较麻烦。定义示例：<code>function addOne( arg ) &#123; return arg + 1; &#125;;</code>、<code>const addOne = arg =&gt; arg + 1;</code></p>
+<p><strong>参数</strong>：在执行函数时写在 <code>()</code> 内并传递的值。函数可能没有参数，也可能有多个参数。</p>
+<p><strong>返回值</strong>：函数返回的值。有的函数有返回值，有的没有。</p>
+<p><strong>对象</strong>：将相关的值（属性）和功能（方法）汇总而成的结构。js 程序就是由对象组合构建而成的。</p>
+<p><strong>属性</strong>：附加在对象上的变量。但与普通变量不同的是，有些属性的值会随对象的状态而改变。反过来，通过设置属性也可能改变对象其他属性等的状态。在对象后加 <code>.</code> 再指定。示例：<code>object.property</code></p>
+<p><strong>只读属性</strong>：附加在对象上的只读值。但与常量不同的是，有些只读属性的值会随对象的状态而改变。read only 常简写为 ro 或 r&#x2F;o。</p>
+<p><strong>方法</strong>：附加在对象上的函数。通常用于加工属性。在对象后加 <code>.</code> 再指定，并在 <code>()</code> 中指定参数。示例：<code>object.method()</code></p>
+<h2 id="追加术语"><a href="#追加术语" class="headerlink" title="追加术语"></a>追加术语</h2><p><strong>类</strong>：被描述为对象的蓝图或类型，是一个程序模块。</p>
+<p><strong>实例</strong>：从类通过 <code>new</code> 生成的对象。通常直接称为对象，因此这是一个不太常用的术语。</p>
+<p><strong>核心脚本</strong>：定义了 rmmz 所制作游戏中所需的类的脚本。实际上，在 rmmz 中使用 js 就是操作这个核心脚本。反过来，一般 js 程序员并不了解它，因此即使去问他们，也很可能被说“那是什么”。</p>
+<p><strong>库</strong>：为制作特定目的的程序而将所需功能汇总而成的程序，是供其他程序调用的程序。通过使用库，无需从头构建程序，可以相对简单地扩展功能。</p>
+<p><strong>局部变量</strong>：程序通过细分为类、函数等来划分作用域，阻止其他作用域访问变量，从而防止复杂度上升。被封闭在这样作用域内的变量就是局部变量。</p>
+<p><strong>全局变量</strong>：全局变量是例外，可以从程序的任何作用域中操作。</p>
+<p><strong>静态类</strong>：无需从类生成对象，直接指定类名即可使用的类。与全局变量一样，可以从程序的任何作用域中操作。</p>
+<p><strong>静态属性</strong>：附加在静态类上的属性。在参考文档中带有 <code>static</code> 标记。</p>
+<p><strong>静态方法</strong>：附加在静态类上的方法。在参考文档中带有 <code>static</code> 标记。</p>
+<h2 id="核心脚本外部的-js"><a href="#核心脚本外部的-js" class="headerlink" title="核心脚本外部的 js"></a>核心脚本外部的 js</h2><p>首先，正如 rmmz 可以在像“アツマール”这样的 Web 浏览器上运行一样，它是运行在 Web 浏览器功能之上的。</p>
+<p>其次，rmmz 中使用了名为 PixiJS 的绘图库和名为 Effekseer 的特效动画库。因此，虽然也可以使用 Web 浏览器自带的 js 对象，但基本上可以忽略它们。</p>
+<p><a target="_blank" rel="noopener" href="https://pixijs.com/">PixiJS 官网</a></p>
+<p><a target="_blank" rel="noopener" href="https://effekseer.github.io/jp/">Effekseer 官网</a></p>
+<p>另外，在本地运行的情况下（Mac 为 .app 格式，Windows 为 .exe 格式），会使用名为 NW.js 的环境，该环境可在本地运行与浏览器相近的 HTML+js。</p>
+<p>虽然有点复杂，但 NW.js 在其环境中拥有一个名为 Node.js 的、可以处理文件等的库。</p>
+<p><a target="_blank" rel="noopener" href="https://nwjs.io/">NW.js 官网</a></p>
+<p><a target="_blank" rel="noopener" href="https://nodejs.org/ja/">Node.js 官网</a></p>
+<p>执行测试游戏时，是否注意到有一个名为“nwjs”的应用程序启动了？就是那个。</p>
+<p>这些库都是通过刚才看到的类树中的对象来使用的，因此没有必要特意直接使用它们。</p>
+<p>但是，js 自身所拥有的基础类，在脚本事件命令中也会经常使用。</p>
+<h2 id="核心脚本的三个组成部分"><a href="#核心脚本的三个组成部分" class="headerlink" title="核心脚本的三个组成部分"></a>核心脚本的三个组成部分</h2><p>刚才看到的类树可以说是材料，要让其运行，必须将它们组装起来。</p>
+<p>在 rmmz 中，执行测试游戏等开始游玩的那一刻，这些材料就已经组装完成了。</p>
+<p>每个 rmmz 用户都不需要考虑如何组装对象。轻松！因此，rmmz 用户需要理解的是 rmmz 是如何组装对象的。</p>
+<p>其构成要素大致分为数据库、游戏对象和管理器这三个部分。</p>
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><p>以 <code>$data</code> 开头的全局变量。由于它就是编辑器中设置的数据库内容本身，因此可以认为您已经有所了解。</p>
+<p>数据库保存在 <code>data/文件名.json</code> 文件中，因此有时也被称为 JSON 数据。在<a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/global.md#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9">参考文档 Global#数据库</a> 中也可以确认，这里将其整理为表格。</p>
+<table>
+<thead>
+<tr>
+<th>说明</th>
+<th>变量名</th>
+<th>数组</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>角色</td>
+<td>$dataActors</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>动画</td>
+<td>$dataAnimations</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>防具</td>
+<td>$dataArmors</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>职业</td>
+<td>$dataClasses</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>公共事件</td>
+<td>$dataCommonEvents</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>敌人</td>
+<td>$dataEnemies</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>物品</td>
+<td>$dataItems</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>当前地图</td>
+<td>$dataMap</td>
+<td>-</td>
+</tr>
+<tr>
+<td>地图列表</td>
+<td>$dataMapInfos</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>技能</td>
+<td>$dataSkills</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>状态</td>
+<td>$dataStates</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>系统</td>
+<td>$dataSystem</td>
+<td>-</td>
+</tr>
+<tr>
+<td>图块组</td>
+<td>$dataTilesets</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>敌群</td>
+<td>$dataTroops</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>武器</td>
+<td>$dataWeapons</td>
+<td>⚪︎</td>
+</tr>
+</tbody></table>
+<div class="tag-plugin colorful note" ><div class="body"><p>由于几乎原样保留了 JSON 文件的结构，因此在游戏中其值不会发生变化。<br>但是仅限 <code>$dataMap</code>，每次移动地图时会重新加载，因此会随地图变化。</p><p>当数组列为 ⚪︎ 时，例如查看 <code>$dataActors</code> 在<a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/global.md#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9">参考文档 Global#数据库</a> 开头的部分，会有如下描述。</p></div></div>
+
+<h4 id="dataActors-Array"><a href="#dataActors-Array" class="headerlink" title="$dataActors :Array.&lt;RPG.Actor&gt;"></a>$dataActors :<a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/Array.md">Array</a>.<a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/RPG.Actor.md"><code>&lt;RPG.Actor&gt;</code></a></h4><p>角色用 JSON（Actors.json）。</p>
+<p><code>Array</code> 是指数组，表示名为 <code>RPG.Actor</code> 的数据被按顺序编号记录。</p>
+<p>因此，在变量后面写 <code>[索引]</code> 来指定，就会返回与索引编号对应的数据。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$dataActors[ 1 ]</span><br></pre></td></tr></table></figure>
+
+<p>这种情况下，是编辑器中数据库 -&gt; 角色 里角色 ID 为 1 的数据。</p>
+<p>点击写有 <code>&lt;RPG.Actor&gt;</code> 的部分的链接查看详细页面，会在<strong>属性</strong>一栏看到排列的英文单词，并写有与数据库窗口中看到的标签之间的对应关系。</p>
+<p>在变量后面继续写 <code>.</code> 再加这些属性名，就可以获取各个值。</p>
+<p>例如，如下写法即可获取角色 ID 1 的“名字”。</p>
+<p>在测试游戏时，复制到按 F8（或 F12）打开的“控制台”中，就会显示该值。</p>
+<p>尝试改变数字、删除 <code>.name</code> 部分、或者改写成其他属性试试看。</p>
+<p>总结来说，rmmz 中准备了全局变量 <code>$dataActors</code>，它是一个数组，因此写 <code>[ 1 ]</code> 就能得到角色 ID 1 的 <code>RPG.Actor</code> 信息，接着写 <code>.name</code> 就能得到角色 ID 1 的“名字”信息。</p>
+<p>角色以外的数据库项目也可以用同样的指定方法获取。</p>
+<p>属性有时本身是数组，有时还进一步拥有其他属性。</p>
+<p>这种情况下，如果是数组就继续写 <code>[索引]</code>，如果是属性就继续写 <code>.属性</code>，这样连接下去即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$dataActors[ 1 ].equips[ 2 ]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$dataActors[ 1 ].traits[ 3 ].code</span><br></pre></td></tr></table></figure>
+
+<p>另外，<code>$dataMap</code> 和 <code>$dataSystem</code> 不是数组，因此不需要索引。</p>
+<p>例如，如下写法即可获取“显示名称”。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$dataMap.displayName</span><br></pre></td></tr></table></figure>
+
+<p>具体的写法，可以搜索トリアコンタン编写的 <a target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/1aqY-xzFqT0vnZE-OkfsMYsP9Ud91vWTrBLU-uDkJ-Ls/edit#gid=0">rmmz 脚本参考文档#数据库</a>，按值的名称查找并确认“获取脚本”中的脚本内容。</p>
+<h3 id="备注（元数据）"><a href="#备注（元数据）" class="headerlink" title="备注（元数据）"></a>备注（元数据）</h3><p>能够处理数据库中包含的备注（元数据）后，就可以实现标准功能难以完成的处理。</p>
+<p>详细内容请参考<a href="./script-mastery">rmmz 脚本应用#元数据</a>。</p>
+<h3 id="游戏数据"><a href="#游戏数据" class="headerlink" title="游戏数据"></a>游戏数据</h3><p>以 <code>$game</code> 开头的全局变量是在游戏中使用的对象。</p>
+<p>可以控制游戏的各种行为。而且其中大部分也兼作存档数据，会保存在存档文件中。</p>
+<p>在<a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/global.md#%E3%82%B2%E3%83%BC%E3%83%A0%E3%83%87%E3%83%BC%E3%82%BF">参考文档 Global#游戏数据</a> 中也可以确认，这里将其整理为表格。</p>
+<table>
+<thead>
+<tr>
+<th>说明</th>
+<th>变量名</th>
+<th>存档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>角色</td>
+<td>$gameActors</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>地图</td>
+<td>$gameMap</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>消息</td>
+<td>$gameMessage</td>
+<td>-</td>
+</tr>
+<tr>
+<td>队伍</td>
+<td>$gameParty</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>玩家</td>
+<td>$gamePlayer</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>画面管理</td>
+<td>$gameScreen</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>独立开关</td>
+<td>$gameSelfSwitches</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>开关</td>
+<td>$gameSwitches</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>系统</td>
+<td>$gameSystem</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>临时数据</td>
+<td>$gameTemp</td>
+<td>-</td>
+</tr>
+<tr>
+<td>计时器</td>
+<td>$gameTimer</td>
+<td>⚪︎</td>
+</tr>
+<tr>
+<td>敌群</td>
+<td>$gameTroop</td>
+<td>-</td>
+</tr>
+<tr>
+<td>变量</td>
+<td>$gameVariables</td>
+<td>⚪︎</td>
+</tr>
+</tbody></table>
+<p>关于游戏数据的获取示例，查看トリアコンタン编写的 <a target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/1aqY-xzFqT0vnZE-OkfsMYsP9Ud91vWTrBLU-uDkJ-Ls/edit#gid=1827808520">rmmz 脚本参考文档#游戏数据</a>，就能明白这里的描述方法。</p>
+<p>属性的指定方法与数据库相同，因此省略。</p>
+<p>游戏数据与数据库的一大区别在于，游戏数据拥有方法。</p>
+<p>另一个区别是，属性不仅仅是获取值，更多的是对值进行赋值。</p>
+<h3 id="管理器"><a href="#管理器" class="headerlink" title="管理器"></a>管理器</h3><p>带有 <code>Manager</code> 的静态类用于管理游戏中使用的数据等。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/index.md#%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3">参考文档：类树#管理器</a></p>
+<p>管理器的功能大体上从名称就能看出，但有时也会缺少预期中的功能。</p>
+<h2 id="类树"><a href="#类树" class="headerlink" title="类树"></a>类树</h2><p>说起来，之前还没有解释过为什么类树会像树木一样分支。</p>
+<p>类通过一种称为“继承”的机制，可以以一个类为基础创建多个不同的类。</p>
+<p>在 rmmz 中，例如以 <code>window</code> 类为基础，创建了大量的相关类。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/index.md#%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6window">参考文档：类树#窗口（Window）</a></p>
+<p>在 rmmz 制作的游戏中有各种各样的窗口，但所有窗口在“有框且能写字”这一基本部分都是相同的，因此创建一个通用化的类，然后在继承它的子类中只定义不同的部分，从而省去重复劳动。</p>
+<p>被继承的类称为超类，继承后的类称为子类。你可能在参考文档的说明中见过这些词。</p>
+<p>正如前面所述，由于复用了被继承类的功能，因此在超类中可用的属性和方法也都能直接使用。</p>
+<p>在参考文档中，“从超类继承的方法”会列出清单，但属性则没有列表化。</p>
+<p>但实际上超类的属性也是可用的。参考文档中，带有 <code>_</code> 的属性建议尽量不使用，而且也不太想让它们太显眼，再加上也很麻烦（笑），所以就没有把从超类继承的属性列表化。</p>
+<p>当你觉得“怎么没有像表示坐标的 <code>x</code> 或 <code>y</code> 这样的标准属性”时，向上追溯到超类，就会发现在某处有定义。</p>
+<p>顺便一提，核心脚本中也有很多类是从前面提到的 PixiJS 对象继承而来的，主要的部分已经转录到了参考文档中。</p>
+<p>通过继承使功能通用化，整体上变得更易于理解，但当你只想调查某一个类时，却必须去追溯其继承来源的超类，因此在这方面反而变得难以把握。</p>
+<p>如果你打算深入使用到制作插件的程度，那么建议先浏览类树，掌握大致的框架。</p>
+<h2 id="对象的生成"><a href="#对象的生成" class="headerlink" title="对象的生成"></a>对象的生成</h2><p>在脚本中编写 js 时，通常使用的是已经生成好的对象。</p>
+<p><code>$data</code> 和 <code>$game</code> 系列的全局变量就是如此。</p>
+<p>或者直接使用 <code>Manager</code> 系列的静态类，或者使用存放了静态类对象的属性。</p>
+<p>因此，大部分对象都已经生成好了，所以需要重新生成对象来使用的情况应该很少，但还是在此说明一下。</p>
+<h3 id="new-类名"><a href="#new-类名" class="headerlink" title="new 类名()"></a>new 类名()</h3><p>在类的说明中，有时会写有 <code>new 类名()</code>。</p>
+<p>那是在生成实例时的写法以及参数的说明。</p>
+<p>像下面这样生成一个新的对象，并将其存入常量中使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const rect = new Rectangle( 360, 8, 100, 400 );</span><br></pre></td></tr></table></figure>
+
+<p><code>Rectangle</code> 参数的详细内容请参考以下参考文档。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/Rectangle.md">参考文档：Rectangle</a></p>
+<p>也可以不存入常量而直接写在方法的参数中，但这样会降低可读性，因此不推荐。</p>
+<h3 id="关于-RPG-和-MV"><a href="#关于-RPG-和-MV" class="headerlink" title="关于 RPG 和 MV"></a>关于 RPG 和 MV</h3><p>看参考文档时，可能会时不时看到带有 <code>RPG.</code> 或 <code>MV.</code> 前缀的类。</p>
+<p>这些在下面的链接中也有说明，是笔者在非官方参考文档中自行命名的。</p>
+<p>因为在参考文档中，如果没有名字的话会非常难以处理。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/RPG.md">参考文档：命名空间：RPG</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/MV.md">参考文档：命名空间：MV</a></p>
+<p><code>RPG.</code> 是为了数据库而创建的东西。从这个意义上说，查看 JSON 文件就能找到其格式定义。它被记录在 <code>$data</code> 系列的全局变量中。</p>
+<p><code>MV.</code> 是因为各种方法的参数和返回值存在一定的格式，而对那种格式进行说明的东西。硬要说的话，方法的代码（程序）就是定义。</p>
+<p>这些在 js 中只是 <code>Object</code> 这种数据类型的一种。可以说是“伪对象”。</p>
+<p>这里，伪对象的类名是 <code>Object</code> 这一点非常令人困惑……我认为这是导致 js 难以说明的首要规格。</p>
+<p>话虽如此，由于是伪对象，创建时不用 <code>new</code>，例如对于 <code>MV.Size</code> 就像下面这样写。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const size = &#123; width: 10, height: 8 &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>想必一看就懂，但用语言描述的话，就是用 <code>&#123;&#125;</code> 将整体括起来，属性和值之间用 <code>:</code> 分隔，每个属性之间用 <code>,</code> 分隔。</p>
+<p><code>MV.Size</code> 这个名字只是为了方便而起的，实际上并不存在叫这个名字的类，只是像这样用符号分隔并排列数据而已。</p>
+<p>属性的详细内容请参考参考文档。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/MV.Size.md">参考文档：MV.Size</a></p>
+<p>这种用属性名汇总起来的值，有时被称为“Object 类型的值”。有时也简称为“对象”，真是麻烦。</p>
+<p>另外，在这个例子中我们赋值给了常量，但有时也会直接写在参数中。</p>
+<p>此外，方法的返回值有时也是这些格式的值。</p>
+<p>以上就是对象以及伪对象（即 Object 类型的值）的生成方法。</p>
+<details class="tag-plugin colorful folding" ><summary><p>小知识</p>
+</summary><div class="body"><p>追溯 js 的类继承，最终都会到达 Object 类。</p> <p>虽然我前面写了“伪对象”之类的说法，但实际上它同时也是“所有对象的父类”。</p> <p>不过，由于它经常被用作数据类型，所以真希望类名不是 Object，而是叫 Record 之类的。</p> <p>我想所有 js 程序员都这么觉得（笑）。</p> <p>另外，从被称为 ES6 的 js 版本开始，提供了一种名为 Map 的数据类型，它解决了把 Object 类型当作数据类型使用时的问题。</p> <p>Map 类型在 rmmz 中也可以使用，不过因为游戏中本身就有地图显示，所以会有点容易混淆。</p> </div></details>
+
+
+
+<h2 id="关于-this"><a href="#关于-this" class="headerlink" title="关于 this"></a>关于 this</h2><p>在看脚本事件命令的示例脚本时，我想你应该频繁地看到 <code>this</code> 这个单词。</p>
+<p>粗略地说，<code>this</code> 中存放的是包含当前脚本的对象。</p>
+<p>在脚本事件命令的情况下，这个对象是 <code>Game_Interpreter</code>。</p>
+<p>因此，在 <code>this</code> 后面可以接着写以下参考文档中的属性和方法。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/Game_Interpreter.md">参考文档：Game_Interpreter</a></p>
+<p>例如像下面这样。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.setWaitMode( &quot;message&quot; );</span><br></pre></td></tr></table></figure>
+
+<p>在脚本移动命令的情况下，<code>this</code> 中存放的是移动路线的执行对象，即事件或玩家。</p>
+<p>因此，在 <code>this</code> 后面可以接着写以下参考文档中的属性和方法。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/Game_Event.md">参考文档：Game_Event</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/Game_Player.md">参考文档：Game_Player</a></p>
+<p>例如像下面这样。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.setDirection( 8 );</span><br></pre></td></tr></table></figure>
+
+<p>到了这个程度，如果不掌握核心脚本的内容，我想很难方便地使用它。</p>
+<p>当你要复制的脚本中含有 <code>this</code> 时，你只需要想着“原来如此，就是之前读过的那个东西啊”大概就可以了。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>希望通过以上内容，大家能够勉强读懂 <a target="_blank" rel="noopener" href="https://github.com/tonbijp/RPGMakerMZ/blob/master/Reference/README.md">rmmz 非官方 js 参考文档</a>。</p>
+<p>正如开头所写，我认为要能够使用全部核心脚本是很困难的。</p>
+<p>不过，通过本文，我认为至少可以达到这样的程度：“当有想实现的处理时，能在参考文档中搜索，运气好的话就能发现知道如何使用的属性或方法”。</p>
+<p>或者，“在复制了脚本之后，通过参考文档查阅方法的参数，然后改写参数”等等。</p>
+<p>毕竟使用 rmmz 的目的是制作作品，因此过度深入 js 反而本末倒置。</p>
+<p>比如我自己，就是因为过于深入，结果完全没做出作品来（笑）。</p>
+<p>不过，以此为契机彻底沉迷于 js，那也是一种乐趣。</p>
+<p>以下讲解了在变量中放入数值以外内容的使用方法。<br><a href="../string">在 rmmz 中使用字符串和数组</a></p>
+</article>
+<div class="article-footer">
+
+</div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">回顾上一篇</div><a href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/script-mastery/">RMMZ的脚本应用</a></div><div class="item" id="next"><div class="note">接下来阅读</div><a href="/wiki/RM%E7%9B%B8%E5%85%B3%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/%E9%B3%B6%E5%B6%8B%E5%B7%A5%E6%88%BF%E7%9A%84%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8/string/">玩转RMMZ的字符串变量</a></div></section></div>
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>快来参与讨论吧~</p>
+
+    </section>
+    <section class='body cmt-body twikoo'>
+      
+
+<div id="twikoo_container"><svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+    </section>
+  </div>
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">五十七</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8ERMMZ%E5%BC%80%E5%A7%8B%E7%9A%84-js-%E5%85%A5%E9%97%A8"><span class="toc-text">从RMMZ开始的 js 入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AF%E8%AF%AD"><span class="toc-text">术语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%BD%E5%8A%A0%E6%9C%AF%E8%AF%AD"><span class="toc-text">追加术语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E8%84%9A%E6%9C%AC%E5%A4%96%E9%83%A8%E7%9A%84-js"><span class="toc-text">核心脚本外部的 js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E8%84%9A%E6%9C%AC%E7%9A%84%E4%B8%89%E4%B8%AA%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="toc-text">核心脚本的三个组成部分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#dataActors-Array"><span class="toc-text">$dataActors :Array.&lt;RPG.Actor&gt;</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%87%E6%B3%A8%EF%BC%88%E5%85%83%E6%95%B0%E6%8D%AE%EF%BC%89"><span class="toc-text">备注（元数据）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E6%95%B0%E6%8D%AE"><span class="toc-text">游戏数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-text">管理器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E6%A0%91"><span class="toc-text">类树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%94%9F%E6%88%90"><span class="toc-text">对象的生成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#new-%E7%B1%BB%E5%90%8D"><span class="toc-text">new 类名()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-RPG-%E5%92%8C-MV"><span class="toc-text">关于 RPG 和 MV</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-this"><span class="toc-text">关于 this</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+  <script type="module">
+  const el = document.getElementById('twikoo_container');
+  util.viewportLazyload(el, load_twikoo, false);
+
+  function load_twikoo() {
+    if (!el) return;
+    utils.js('https://gcore.jsdelivr.net/npm/twikoo@1.6/dist/twikoo.all.min.js', {defer: true}).then(function () {
+      const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
+      twikoo.init(Object.assign({"js":"https://gcore.jsdelivr.net/npm/twikoo@1.6/dist/twikoo.all.min.js","envId":"https://57com.netlify.app/.netlify/functions/twikoo"}, {
+        el: '#twikoo_container',
+        path: path,
+      }));
+    });
+  }
+</script>
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img, .md-text img:not([class]), .md-text .image img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>
