@@ -17,30 +17,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
-  <title>GF_3_ItemInfoWindow功能扩展——ItemInfoPatch - 57之新塔</title>
+  <title>57系列插件：目录 - 57之新塔</title>
 
   
-    <meta name="description" content="为GF_3_ItemInfoWindow提供了两个简单扩展：自动换行、便捷滚动。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="GF_3_ItemInfoWindow功能扩展——ItemInfoPatch">
-<meta property="og:url" content="http://www.57hmpg.top/posts/1424383834">
+    <meta name="description" content="一些在自己的项目中产生的插件，放在这里仅作存档用途。 大多是为了适配gf系列插件，对现有的插件进行的移植（前提是利用规约允许），以及对gf插件的小型扩展。 （对gf插件感兴趣可上b站搜索ganfly加群获取，我不确定是否允许随意引流。。） 通常需要大量前置，请先确认后再使用 vibe coding警告 感觉首页太多了，就移动到这里来了，会慢慢更新。。 仓库地址    移植GF插件​	57_Achi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="目录">
+<meta property="og:url" content="http://www.57hmpg.top/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/%E5%89%8D%E8%A8%80/">
 <meta property="og:site_name" content="57之新塔">
-<meta property="og:description" content="为GF_3_ItemInfoWindow提供了两个简单扩展：自动换行、便捷滚动。">
+<meta property="og:description" content="一些在自己的项目中产生的插件，放在这里仅作存档用途。 大多是为了适配gf系列插件，对现有的插件进行的移植（前提是利用规约允许），以及对gf插件的小型扩展。 （对gf插件感兴趣可上b站搜索ganfly加群获取，我不确定是否允许随意引流。。） 通常需要大量前置，请先确认后再使用 vibe coding警告 感觉首页太多了，就移动到这里来了，会慢慢更新。。 仓库地址    移植GF插件​	57_Achi">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.57hmpg.top/img/favicon.ico">
-<meta property="article:published_time" content="2026-07-08T03:26:14.000Z">
-<meta property="article:modified_time" content="2026-07-15T16:50:51.603Z">
+<meta property="article:published_time" content="2026-07-29T08:48:26.630Z">
+<meta property="article:modified_time" content="2026-07-29T08:48:26.630Z">
 <meta property="article:author" content="五十七">
-<meta property="article:tag" content="RMMZ">
-<meta property="article:tag" content="插件">
-<meta property="article:tag" content="自制">
-<meta property="article:tag" content="补丁向">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://www.57hmpg.top/img/favicon.ico">
   
   
   
-  <meta name="keywords" content="RMMZ,插件,自制,补丁向">
+  
 
   <!-- feed -->
   
@@ -52,26 +48,27 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"五十七","sameAs":[],"image":"/img/favicon.ico"},"dateCreated":"2026-07-08T11:26:14+08:00","dateModified":"2026-07-16T00:50:51+08:00","datePublished":"2026-07-08T11:26:14+08:00","description":"","headline":"GF_3_ItemInfoWindow功能扩展——ItemInfoPatch","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.57hmpg.top/posts/1424383834/"},"publisher":{"@type":"Organization","name":"五十七","sameAs":[],"image":"/img/favicon.ico","logo":{"@type":"ImageObject","url":"/img/favicon.ico"}},"url":"http://www.57hmpg.top/posts/1424383834/","keywords":"RMMZ, 插件, 自制, 补丁向","image":[]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"http://www.57hmpg.top/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/%E5%89%8D%E8%A8%80/","author":{"@type":"Person","name":"五十七","sameAs":[],"image":"/img/favicon.ico"},"name":"目录","description":"一些在自己的项目中产生的插件，放在这里仅作存档用途。\n大多是为了适配gf系列插件，对现有的插件进行的移植（前提是利用规约允许），以及对gf插件的小型扩展。\n（对gf插件感兴趣可上b站搜索ganfly加群获取，我不确定是否允许随意引流。。）\n通常需要大量前置，请先确认后再使用\nvibe coding警告\n感觉首页太多了，就移动到这里来了，会慢慢更新。。\n仓库地址\n\n\n\n移植GF插件​\t57_A...","url":"http://www.57hmpg.top/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/%E5%89%8D%E8%A8%80/"}</script>
   
 </head>
 <body>
 
-<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
 
 
-<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/img/favicon.ico" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">57之新塔</div></a></div></header>
+<div class="l_body content" id="start" layout="page" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><div class="icon"><img no-lazy class="icon" src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2779789.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><a class="title" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/%E5%89%8D%E8%A8%80"><div class="main">57系列插件</div></a></div></header>
 
 <div class="nav-area">
 
-<nav class="menu dis-select"><a class="nav-item active" title="博客" href="/" style="color:#6c8ad5"><span>博客</span></a><a class="nav-item" title="文档" href="/wiki/" style="color:#6c8ad5"><span>文档</span></a><a class="nav-item" title="关于" href="/about/" style="color:#6c8ad5"><span>关于</span></a></nav>
+<nav class="menu dis-select"><a class="nav-item" title="博客" href="/" style="color:#6c8ad5"><span>博客</span></a><a class="nav-item active" title="文档" href="/wiki/" style="color:#6c8ad5"><span>文档</span></a><a class="nav-item" title="关于" href="/about/" style="color:#6c8ad5"><span>关于</span></a></nav>
 </div>
 <div class="widgets">
-<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" data-filter="/wiki/57系列插件/" placeholder="在 57系列插件 中搜索..."></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
 
 
-
-<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/posts/4137025940/"><span class="title">GF扩展的外部json词典系统——ExternalGlossary</span></a><a class="item title" href="/posts/1529302702/"><span class="title">我们MZ插件真的被做局了吗？如何搜索MZ插件</span></a><a class="item title" href="/posts/1177326553/"><span class="title">GF通知系统音效扩展——GF_ToastSE</span></a><a class="item title" href="/posts/1424383834/"><span class="title">GF_3_ItemInfoWindow功能扩展——ItemInfoPatch</span></a><a class="item title" href="/posts/2240232532/"><span class="title">TRP_SkitMZ快速入门</span></a><a class="item title" href="/posts/2623745029/"><span class="title">适配GF行动序列的SV图扩展——SVBattlerAdvance</span></a><a class="item title" href="/posts/3324966676/"><span class="title">适配DotMoveSystem的跟随者演出控制插件——FollowTarget</span></a><a class="item title" href="/posts/839109545/"><span class="title">也许是最适配MZ战斗序列的sv战斗图扩展——BattleMotionMZ</span></a><a class="item title" href="/posts/2485290938/"><span class="title">用TileD画rmmz地图入门</span></a><a class="item title" href="/posts/113354059/"><span class="title">基于GF插件的简易技能熟练度系统——GFSkillMastery</span></a></div></widget>
+<widget class="widget-wrapper doc-tree post-list"><div class="widget-header dis-select"><span class="name">目录</span></div><div class="widget-body fs14"><a class="link active" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/%E5%89%8D%E8%A8%80/#start"><span class="toc-text">目录</span><svg class="active-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M21 11.098v4.993c0 3.096 0 4.645-.734 5.321c-.35.323-.792.526-1.263.58c-.987.113-2.14-.907-4.445-2.946c-1.02-.901-1.529-1.352-2.118-1.47a2.225 2.225 0 0 0-.88 0c-.59.118-1.099.569-2.118 1.47c-2.305 2.039-3.458 3.059-4.445 2.945a2.238 2.238 0 0 1-1.263-.579C3 20.736 3 19.188 3 16.091v-4.994C3 6.81 3 4.666 4.318 3.333C5.636 2 7.758 2 12 2c4.243 0 6.364 0 7.682 1.332C21 4.665 21 6.81 21 11.098" opacity=".5"/><path fill="currentColor" d="M9 5.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5z"/></svg></a></div><div class="widget-header dis-select"><span class="name">GF移植</span></div><div class="widget-body fs14"><a class="link" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/Achievement/"><span class="toc-text">57_Achievement</span></a></div></widget>
 </div>
 <footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/azkoree" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/></a></div></footer>
 </div></aside><div class="l_main" id="main">
@@ -83,41 +80,39 @@
 <div class="article banner top">
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
-<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/RM%E7%9B%B8%E5%85%B3/">RM相关</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/RM%E7%9B%B8%E5%85%B3/%E4%BC%AA%E8%87%AA%E5%88%B6%E6%8F%92%E4%BB%B6/">伪自制插件</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2026-07-08T03:26:14.000Z">2026-07-08</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-07-15T16:50:51.603Z">2026-07-16</time></span></div></div></div>
+<span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">文档</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/%E5%89%8D%E8%A8%80/">57系列插件</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">更新于：<time datetime="2026-07-29T08:48:26.630Z">2026-07-29</time></span></div></div></div>
     
     <div class="bottom only-title">
       
       <div class="text-area">
-        <h1 class="text title"><span>GF_3_ItemInfoWindow功能扩展——ItemInfoPatch</span></h1>
+        <h1 class="text title"><span>目录</span></h1>
         
       </div>
     </div>
     
   </div>
-  </div><article class="md-text content"><p>自用的GF_3_ItemInfoWindow的简单扩展，包含了两个固定窗口模式的功能：</p>
-<ul>
-<li>使用固定信息窗口时，鼠标停留在选中的物品上使用滚轮，即可滚动物品信息框，无需将鼠标再次移动到信息窗口上方</li>
-<li>为信息窗口启用自动换行，可<code>&lt;br&gt;</code>手动换行</li>
-</ul>
-<p>不提供插件本体，请自行前往<a target="_blank" rel="noopener" href="https://www.ifdian.net/item/2503fca611c311efbfb652540025c377">物品信息窗口-来自gt50丨爱发电</a>购买</p>
-<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p><a target="_blank" rel="noopener" href="https://github.com/azkoree/57_MZPlugin/blob/main/GF_ItemInfoPatch.js">github</a></p>
-<h2 id="利用规约"><a href="#利用规约" class="headerlink" title="利用规约"></a>利用规约</h2><p>本身就是AI写的东西，所以放开一切授权，商用&#x2F;非商用，修改分发，当做是自己做的也没有问题</p>
+  </div><article class="md-text content"><p>一些在自己的项目中产生的插件，放在这里仅作存档用途。</p>
+<p>大多是为了适配gf系列插件，对现有的插件进行的移植（前提是利用规约允许），以及对gf插件的小型扩展。</p>
+<p>（对gf插件感兴趣可上b站搜索ganfly加群获取，我不确定是否允许随意引流。。）</p>
+<p><strong>通常需要大量前置，请先确认后再使用</strong></p>
+<p><strong>vibe coding警告</strong></p>
+<p>感觉首页太多了，就移动到这里来了，会慢慢更新。。</p>
+<a class="tag-plugin colorful button" color="theme" title="仓库地址" target="_blank" rel="noopener" href="https://github.com/azkoree/57_MZPlugin"><span>仓库地址</span></a>
+
+
+
+<h1 id="移植GF插件"><a href="#移植GF插件" class="headerlink" title="移植GF插件"></a>移植GF插件</h1><p>​	<strong><a href="../Achievement">57_Achievement</a></strong></p>
+<p>改自<strong>DM_Achievement</strong>，可自定义成就条件和奖励的简单成就系统</p>
+<h1 id="GF适配原创插件"><a href="#GF适配原创插件" class="headerlink" title="GF适配原创插件"></a>GF适配原创插件</h1><h1 id="GF小型扩展"><a href="#GF小型扩展" class="headerlink" title="GF小型扩展"></a>GF小型扩展</h1><h1 id="通用插件"><a href="#通用插件" class="headerlink" title="通用插件"></a>通用插件</h1><h1 id="网页工具"><a href="#网页工具" class="headerlink" title="网页工具"></a>网页工具</h1><h1 id="统一利用规约"><a href="#统一利用规约" class="headerlink" title="统一利用规约"></a>统一利用规约</h1><p>本身就是AI写的东西，所以放开一切授权，商用&#x2F;非商用，修改分发，当做是自己做的也没有问题</p>
+<p>移植的插件已确认原插件的利用规约允许</p>
 <p>但由于我本人并不太懂代码，所以<strong>很难提供任何技术支持</strong>，请谅解</p>
 </article>
 <div class="article-footer">
-    <section id="license">
-      <div class="header"><span>许可协议</span></div>
-      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
-</div>
-    </section>
-    
 
 </div>
 
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/posts/256068035/">SceneGlossary的外部Json扩展</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/posts/2240232532/">TRP_SkitMZ快速入门</a></div></section></div>
-
-
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">接下来阅读</div><a href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/Achievement/">57_Achievement</a></div></section></div>
 
 
   <div class="related-wrap md-text" id="comments">
@@ -141,7 +136,7 @@
 
 
 
-<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80"><span class="toc-text">下载地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E8%A7%84%E7%BA%A6"><span class="toc-text">利用规约</span></a></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>参与讨论</span></a></div></widget>
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%BB%E6%A4%8DGF%E6%8F%92%E4%BB%B6"><span class="toc-text">移植GF插件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GF%E9%80%82%E9%85%8D%E5%8E%9F%E5%88%9B%E6%8F%92%E4%BB%B6"><span class="toc-text">GF适配原创插件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GF%E5%B0%8F%E5%9E%8B%E6%89%A9%E5%B1%95"><span class="toc-text">GF小型扩展</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E6%8F%92%E4%BB%B6"><span class="toc-text">通用插件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E9%A1%B5%E5%B7%A5%E5%85%B7"><span class="toc-text">网页工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%9F%E4%B8%80%E5%88%A9%E7%94%A8%E8%A7%84%E7%BA%A6"><span class="toc-text">统一利用规约</span></a></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>参与讨论</span></a></div></widget>
 </div></aside><div class='float-panel'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
