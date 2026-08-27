@@ -26,12 +26,12 @@
 <meta property="og:site_name" content="57之新塔">
 <meta property="og:description" content="一些产生于自己项目的rmmz插件">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://www.57hmpg.top/img/favicon.ico">
-<meta property="article:published_time" content="2026-08-26T11:17:56.929Z">
-<meta property="article:modified_time" content="2026-08-26T11:17:56.929Z">
+<meta property="og:image" content="https://img.57hmpg.top/file/1787807239396_20260827-2.gif">
+<meta property="article:published_time" content="2026-08-27T05:10:41.615Z">
+<meta property="article:modified_time" content="2026-08-27T05:10:41.615Z">
 <meta property="article:author" content="五十七">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.57hmpg.top/img/favicon.ico"><meta name="twitter:title" content="WSQ_EventPopIcon">
+<meta name="twitter:image" content="https://img.57hmpg.top/file/1787807239396_20260827-2.gif"><meta name="twitter:title" content="WSQ_EventPopIcon">
   
   
   
@@ -379,7 +379,7 @@
     
     <div class="top bread-nav footnote"><div class="top-row"><div class="left" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">文档</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/%E5%89%8D%E8%A8%80/">57系列插件</a></div></div><div class="meta-row">
-<div class="flex-row" id="post-meta"><span class="text created">更新于：<time datetime="2026-08-26T11:17:56.929Z">2026-08-26</time></span></div>
+<div class="flex-row" id="post-meta"><span class="text created">更新于：<time datetime="2026-08-27T05:10:41.615Z">2026-08-27</time></span></div>
 </div></div>
     
     <div class="bottom only-title">
@@ -394,6 +394,7 @@
   </div></div>
 <article class="md-text content"><p>以下是AI写的，我写不动了</p>
 <p>本插件移植自 RMVA 的<a target="_blank" rel="noopener" href="https://github.com/OneEyedEagle/EAGLE-RGSS3">角色头顶显示图标 by 老鹰》v1.3.0 及其《Add-On 事件调查提示》v2.2.0</a>，合并为单个 RMMZ 插件。<br>它允许你为地图上的角色（玩家、事件、跟随者）添加头顶图标，支持 4 种动画（浮动/震动/弹跳/放缩）、3 个锚点（头顶/脚下/中心）与渐隐渐现效果；同时支持玩家接近或面朝事件时自动显示调查提示图标（基于事件页首条注释配置）。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.57hmpg.top/file/1787807239396_20260827-2.gif"></p>
 <h2 id="前置要求"><a href="#前置要求" class="headerlink" title="前置要求"></a>前置要求</h2><ul>
 <li>无。本插件不依赖 GF 插件体系，可在任意加载位置使用。</li>
 <li>可选：HalfMove（半格移动插件）。启用时自动采用整格距离/面向判定。</li>
@@ -505,7 +506,6 @@
 </tr>
 </tbody></table></div>
 <p><strong><code>options</code> 对象（缺省字段保持当前显示参数不变，增量修改）</strong>：</p>
-<p>js</p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  pos: 0|1|2,          // 位置</span><br><span class="line">  type: 1|2|3|4,       // 动画类型</span><br><span class="line">  dir: 2|4|6|8,        // 浮动方向</span><br><span class="line">  l: 数字,             // 震动幅度</span><br><span class="line">  opa: 0|1,            // 显隐效果</span><br><span class="line">  dx: 数字, dy: 数字,  // 偏移</span><br><span class="line">  def: "预设名",       // 应用预设</span><br><span class="line">  persist: true|false  // 持续显示（见下文）</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 
@@ -515,10 +515,12 @@
 <p>js</p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 玩家头上显示 4 号图标（默认参数）</span><br><span class="line">WSQ.EPI.show(0, 4);</span><br><span class="line"></span><br><span class="line">// 事件 3 头上显示 160 号图标，中心位置</span><br><span class="line">WSQ.EPI.show(3, 160, { pos: 2 });</span><br><span class="line"></span><br><span class="line">// 玩家与第 1 个跟随者同时显示 4 号图标，y 偏移 -60</span><br><span class="line">WSQ.EPI.showOn([0, -1], 4, { dy: -60 });</span><br><span class="line"></span><br><span class="line">// 应用预设并显示</span><br><span class="line">WSQ.EPI.show(0, 4, { def: "talk", dy: -60 });</span><br><span class="line"></span><br><span class="line">// 对话中持续显示说话人图标（事件脚本）</span><br><span class="line">◆脚本：WSQ.EPI.show(3, 4, { persist: true })</span><br><span class="line">◆显示文字：……</span><br><span class="line">◆脚本：WSQ.EPI.hide(3)</span><br></pre></td></tr></tbody></table></figure>
 
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.57hmpg.top/file/1787807363406_20260827-3.gif" alt="范例的图标显示位置并没有认真调整"></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">◆脚本：WSQ.EPI.show(4, 4, { persist: true })</span><br><span class="line">◆文本：打手, 无, 窗口, 底部</span><br><span class="line">：　　：情报是假滴！</span><br><span class="line">◆脚本：WSQ.EPI.clearAll() </span><br><span class="line">◆脚本：WSQ.EPI.show(2, 4, { persist: true })</span><br><span class="line">◆文本：商人, 无, 窗口, 底部</span><br><span class="line">：　　：假在哪？</span><br><span class="line">◆脚本：WSQ.EPI.clearAll() </span><br><span class="line">◆脚本：WSQ.EPI.show(6, 4, { persist: true })</span><br><span class="line">◆文本：被打的小李, 无, 窗口, 底部</span><br><span class="line">：　　：假在暑的后面！</span><br><span class="line">◆脚本：WSQ.EPI.clearAll() </span><br><span class="line">◆文本：小杨, 无, 窗口, 底部</span><br><span class="line">：　　：\{\{这么强！？</span><br></pre></td></tr></tbody></table></figure>
+
 
 
 <p><strong>底层属性直接操作（同样可用）</strong>：</p>
-<p>js</p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$gamePlayer.popIcon = 4;                // 显示 4 号图标</span><br><span class="line">$gamePlayer.popIconParams.dy = -60;      // 调整偏移</span><br><span class="line">$gamePlayer.popIconParams.def = "look";  // 应用预设（下一帧生效并自动清除）</span><br><span class="line">$gamePlayer.popIcon = 0;                 // 立即清除</span><br><span class="line">$gameMap.event(3).popIcon = 4;           // 事件同理</span><br></pre></td></tr></tbody></table></figure>
 
 
