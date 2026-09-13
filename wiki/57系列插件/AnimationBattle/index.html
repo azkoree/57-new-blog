@@ -19,15 +19,15 @@
   <meta name="theme-color" content="#f9fafb">
   <title>57系列插件：WSQ_AnimationBattle - 57之新塔</title>
 
-  <meta name="description" content="一些产生于自己项目的rmmz插件">
+  <meta name="description" content="曾经本博客短暂发布过一个SVBattlerAdvance，但那个太不稳定，最终我自己也放弃了。但还是找到了另一个底子很不错的角色+敌人 全动画战斗，可以直接用数据库中的MV格式动画来当SV图用。虽然仍然有每帧尺寸192x192的限制，但够用了 如果使用原版的战斗系统，直接去支持原作者的原版插件即可。如果用vs的话。。我也不知道怎么办了。。相对比较妥协的是使用本站曾经推荐的BattleMotionM">
 <meta property="og:type" content="website">
 <meta property="og:title" content="WSQ_AnimationBattle">
 <meta property="og:url" content="http://www.57hmpg.top/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/AnimationBattle/">
 <meta property="og:site_name" content="57之新塔">
-<meta property="og:description" content="一些产生于自己项目的rmmz插件">
+<meta property="og:description" content="曾经本博客短暂发布过一个SVBattlerAdvance，但那个太不稳定，最终我自己也放弃了。但还是找到了另一个底子很不错的角色+敌人 全动画战斗，可以直接用数据库中的MV格式动画来当SV图用。虽然仍然有每帧尺寸192x192的限制，但够用了 如果使用原版的战斗系统，直接去支持原作者的原版插件即可。如果用vs的话。。我也不知道怎么办了。。相对比较妥协的是使用本站曾经推荐的BattleMotionM">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.57hmpg.top/img/favicon.ico">
-<meta property="article:published_time" content="2026-08-23T13:51:53.751Z">
+<meta property="article:published_time" content="2026-09-13T03:37:25.837Z">
 <meta property="article:modified_time" content="2026-08-23T13:51:53.751Z">
 <meta property="article:author" content="五十七">
 <meta name="twitter:card" content="summary">
@@ -47,7 +47,7 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"http://www.57hmpg.top/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/AnimationBattle/","author":{"@type":"Person","name":"五十七","sameAs":[],"image":"http://www.57hmpg.top/img/favicon.ico"},"name":"WSQ_AnimationBattle","description":"一些产生于自己项目的rmmz插件","url":"http://www.57hmpg.top/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/AnimationBattle/"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"http://www.57hmpg.top/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/AnimationBattle/","author":{"@type":"Person","name":"五十七","sameAs":[],"image":"http://www.57hmpg.top/img/favicon.ico"},"name":"WSQ_AnimationBattle","description":"","url":"http://www.57hmpg.top/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/AnimationBattle/"}</script>
   
 
   <!-- icons.yml 驱动的 CSS 装饰图标 -->
@@ -66,159 +66,36 @@
 
 
 <div class="wiki-home-wrap"><a class="wiki-home cap" href="/wiki/"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="currentColor" d="M17.75 19a.75.75 0 0 1-1.32.488l-6-7a.75.75 0 0 1 0-.976l6-7A.75.75 0 0 1 17.75 5z" opacity=".5"/><path fill="currentColor" fill-rule="evenodd" d="M13.488 19.57a.75.75 0 0 0 .081-1.058L7.988 12l5.581-6.512a.75.75 0 1 0-1.138-.976l-6 7a.75.75 0 0 0 0 .976l6 7a.75.75 0 0 0 1.057.082" clip-rule="evenodd"/></svg><span>所有项目</span></a></div>
-<header class="header"><div class="logo-wrap"><div class="icon"><img no-lazy class="icon" src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2779789.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><a class="title" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/%E5%89%8D%E8%A8%80/"><div class="main">57系列插件</div></a></div></header>
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg"></div><img no-lazy class="avatar" src="/img/favicon.ico" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">57之新塔</div></a></div></header>
 
 
-<div class="search-wrapper" id="search-wrapper"><div class="search-form" role="search"><label class="search-button" for="search-input" aria-hidden="true"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></label><input type="search" class="search-input" id="search-input" aria-label="在 57系列插件 中搜索..." data-filter="&#x2F;wiki&#x2F;57系列插件&#x2F;" placeholder="在 57系列插件 中搜索..."></div><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+<div class="search-wrapper" id="search-wrapper"><div class="search-form" role="search"><label class="search-button" for="search-input" aria-hidden="true"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></label><input type="search" class="search-input" id="search-input" aria-label="在 &#x2F;wiki&#x2F;57系列插件&#x2F; 中搜索" data-filter="&#x2F;wiki&#x2F;57系列插件&#x2F;" placeholder="在 &#x2F;wiki&#x2F;57系列插件&#x2F; 中搜索"></div><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
 
 <div class="widgets">
 <svg class="grad-def" width="0" height="0" aria-hidden="true" focusable="false"><defs><linearGradient id="leftbar-active-icon-grad" x1="75%" y1="6.7%" x2="6.7%" y2="125%"><stop offset="20%" style="stop-color:var(--item-theme-light)"/><stop offset="60%" style="stop-color:var(--item-theme)"/></linearGradient></defs></svg>
 
 
 
-<widget class="widget-wrapper doc-tree-widget" data-wiki="57系列插件">
-  
-  <div class="widget-body"><section class="widget-section"><div class="widget-header dis-select"><span class="name">目录</span></div><div class="ui-collection" data-layout="list" data-variant="nav" data-density="compact">
-  
-    
-<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/%E5%89%8D%E8%A8%80/" title="目录" style="--item-grad:url(#leftbar-active-icon-grad);">
-  
-  
-  
-    <span class="ui-collection__content">
-      
-      <span class="ui-collection__title">目录</span>
-      
-      
-    </span>
-  
-  
-  
-  
-</a>
 
-  
-</div></section><section class="widget-section"><div class="widget-header dis-select"><span class="name">GF移植</span></div><div class="ui-collection" data-layout="list" data-variant="nav" data-density="compact">
-  
-    
-<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/Achievement/" title="WSQ_Achievement" style="--item-grad:url(#leftbar-active-icon-grad);">
-  
-  
-  
-    <span class="ui-collection__content">
-      
-      <span class="ui-collection__title">WSQ_Achievement</span>
-      
-      
-    </span>
-  
-  
-  
-  
-</a>
 
-  
-    
-<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/AlchemySystem/" title="GF_3_AlchemySystem" style="--item-grad:url(#leftbar-active-icon-grad);">
-  
-  
-  
-    <span class="ui-collection__content">
-      
-      <span class="ui-collection__title">GF_3_AlchemySystem</span>
-      
-      
-    </span>
-  
-  
-  
-  
-</a>
 
-  
-    
-<a class="ui-collection__item card-hover card-hover--spotlight is-active" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/AnimationBattle/" title="WSQ_AnimationBattle" aria-current="page" style="--item-grad:url(#leftbar-active-icon-grad);">
-  
-  
-  
-    <span class="ui-collection__content">
-      
-      <span class="ui-collection__title">WSQ_AnimationBattle</span>
-      
-      
-    </span>
-  
-  
-  <span class="ui-collection__indicator"></span>
-  
-</a>
 
+<widget class="widget-wrapper recent-widget">
+  
+    <div class="widget-header dis-select">
+      <span class="name">最近更新</span>
+      
+    </div>
+  
+  <div class="widget-body"><div class="ui-collection" data-layout="list" data-variant="nav" data-density="compact">
   
     
-<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/ExternalGlossary/" title="GF_3_ExternalGlossary" style="--item-grad:url(#leftbar-active-icon-grad);">
+<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/DialogPatch/" title="WSQ_G_DialogPatch">
   
   
   
     <span class="ui-collection__content">
-      
-      <span class="ui-collection__title">GF_3_ExternalGlossary</span>
-      
-      
-    </span>
-  
-  
-  
-  
-</a>
-
-  
-</div></section><section class="widget-section"><div class="widget-header dis-select"><span class="name">GF适配原创</span></div><div class="ui-collection" data-layout="list" data-variant="nav" data-density="compact">
-  
-    
-<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/EasySkillMastery/" title="GF_EasySkillMastery" style="--item-grad:url(#leftbar-active-icon-grad);">
-  
-  
-  
-    <span class="ui-collection__content">
-      
-      <span class="ui-collection__title">GF_EasySkillMastery</span>
-      
-      
-    </span>
-  
-  
-  
-  
-</a>
-
-  
-</div></section><section class="widget-section"><div class="widget-header dis-select"><span class="name">GF小型扩展</span></div><div class="ui-collection" data-layout="list" data-variant="nav" data-density="compact">
-  
-    
-<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/BattleActorUICtrl/" title="GF_4_BattleActorUICtrl" style="--item-grad:url(#leftbar-active-icon-grad);">
-  
-  
-  
-    <span class="ui-collection__content">
-      
-      <span class="ui-collection__title">GF_4_BattleActorUICtrl</span>
-      
-      
-    </span>
-  
-  
-  
-  
-</a>
-
-  
-    
-<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/DialogPatch/" title="WSQ_G_DialogPatch" style="--item-grad:url(#leftbar-active-icon-grad);">
-  
-  
-  
-    <span class="ui-collection__content">
-      
+      <span class="ui-collection__prefix">57系列插件</span>
       <span class="ui-collection__title">WSQ_G_DialogPatch</span>
       
       
@@ -231,68 +108,12 @@
 
   
     
-<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/ItemInfoPatch/" title="GF_ItemInfoPatch" style="--item-grad:url(#leftbar-active-icon-grad);">
+<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/EventInteractEx/" title="WSQ_EventInteractEX">
   
   
   
     <span class="ui-collection__content">
-      
-      <span class="ui-collection__title">GF_ItemInfoPatch</span>
-      
-      
-    </span>
-  
-  
-  
-  
-</a>
-
-  
-    
-<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/ToastSE/" title="GF_ToastSE" style="--item-grad:url(#leftbar-active-icon-grad);">
-  
-  
-  
-    <span class="ui-collection__content">
-      
-      <span class="ui-collection__title">GF_ToastSE</span>
-      
-      
-    </span>
-  
-  
-  
-  
-</a>
-
-  
-</div></section><section class="widget-section"><div class="widget-header dis-select"><span class="name">通用插件</span></div><div class="ui-collection" data-layout="list" data-variant="nav" data-density="compact">
-  
-    
-<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/CollisionDev/" title="WSQ_CollisionDev" style="--item-grad:url(#leftbar-active-icon-grad);">
-  
-  
-  
-    <span class="ui-collection__content">
-      
-      <span class="ui-collection__title">WSQ_CollisionDev</span>
-      
-      
-    </span>
-  
-  
-  
-  
-</a>
-
-  
-    
-<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/EventInteractEx/" title="WSQ_EventInteractEX" style="--item-grad:url(#leftbar-active-icon-grad);">
-  
-  
-  
-    <span class="ui-collection__content">
-      
+      <span class="ui-collection__prefix">57系列插件</span>
       <span class="ui-collection__title">WSQ_EventInteractEX</span>
       
       
@@ -305,12 +126,48 @@
 
   
     
-<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/EventPopIcon/" title="WSQ_EventPopIcon" style="--item-grad:url(#leftbar-active-icon-grad);">
+<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/CollisionDev/" title="WSQ_CollisionDev">
   
   
   
     <span class="ui-collection__content">
+      <span class="ui-collection__prefix">57系列插件</span>
+      <span class="ui-collection__title">WSQ_CollisionDev</span>
       
+      
+    </span>
+  
+  
+  
+  
+</a>
+
+  
+    
+<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/%E5%89%8D%E8%A8%80/" title="目录">
+  
+  
+  
+    <span class="ui-collection__content">
+      <span class="ui-collection__prefix">57系列插件</span>
+      <span class="ui-collection__title">目录</span>
+      
+      
+    </span>
+  
+  
+  
+  
+</a>
+
+  
+    
+<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/EventPopIcon/" title="WSQ_EventPopIcon">
+  
+  
+  
+    <span class="ui-collection__content">
+      <span class="ui-collection__prefix">57系列插件</span>
       <span class="ui-collection__title">WSQ_EventPopIcon</span>
       
       
@@ -323,13 +180,13 @@
 
   
     
-<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/FollowerTarget/" title="FollowerTarget" style="--item-grad:url(#leftbar-active-icon-grad);">
+<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/AnimationBattle/" title="WSQ_AnimationBattle">
   
   
   
     <span class="ui-collection__content">
-      
-      <span class="ui-collection__title">FollowerTarget</span>
+      <span class="ui-collection__prefix">57系列插件</span>
+      <span class="ui-collection__title">WSQ_AnimationBattle</span>
       
       
     </span>
@@ -341,13 +198,13 @@
 
   
     
-<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/MoveLikeArcade/" title="MoveLikeTarget" style="--item-grad:url(#leftbar-active-icon-grad);">
+<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/PictureStage/" title="WSQ_PictureStage">
   
   
   
     <span class="ui-collection__content">
-      
-      <span class="ui-collection__title">MoveLikeTarget</span>
+      <span class="ui-collection__prefix">WSQ系列插件</span>
+      <span class="ui-collection__title">WSQ_PictureStage</span>
       
       
     </span>
@@ -359,13 +216,13 @@
 
   
     
-<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/MultiTextDatabase/" title="WSQ_MultiTextDatabase" style="--item-grad:url(#leftbar-active-icon-grad);">
+<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/RPG%E8%AE%B2%E5%BA%A7/scenario/partymember/" title="主人公与同伴的构成">
   
   
   
     <span class="ui-collection__content">
-      
-      <span class="ui-collection__title">WSQ_MultiTextDatabase</span>
+      <span class="ui-collection__prefix">RPG讲座</span>
+      <span class="ui-collection__title">主人公与同伴的构成</span>
       
       
     </span>
@@ -376,7 +233,43 @@
 </a>
 
   
-</div></section></div>
+    
+<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/RPG%E8%AE%B2%E5%BA%A7/battlebalance/heal/" title="回复魔法的问题点">
+  
+  
+  
+    <span class="ui-collection__content">
+      <span class="ui-collection__prefix">RPG讲座</span>
+      <span class="ui-collection__title">回复魔法的问题点</span>
+      
+      
+    </span>
+  
+  
+  
+  
+</a>
+
+  
+    
+<a class="ui-collection__item card-hover card-hover--spotlight" href="/wiki/RPG%E8%AE%B2%E5%BA%A7/battlebalance/zakko/" title="如何让杂兵战不再是枯燥的“作业”">
+  
+  
+  
+    <span class="ui-collection__content">
+      <span class="ui-collection__prefix">RPG讲座</span>
+      <span class="ui-collection__title">如何让杂兵战不再是枯燥的“作业”</span>
+      
+      
+    </span>
+  
+  
+  
+  
+</a>
+
+  
+</div></div>
   
 </widget>
 
@@ -396,7 +289,10 @@
   <div class="content">
     
     <div class="top bread-nav footnote"><div class="top-row"><div class="left" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
-<span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">文档</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/%E5%89%8D%E8%A8%80/">57系列插件</a></div></div><div class="meta-row">
+
+  <span class="sep"></span>
+  <a class="cap breadcrumb" href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/AnimationBattle/">WSQ_AnimationBattle</a>
+  </div></div><div class="meta-row">
 <div class="flex-row" id="post-meta"><span class="text created">更新于：<time datetime="2026-08-23T13:51:53.751Z">2026-08-23</time></span></div>
 </div></div>
     
@@ -434,7 +330,7 @@
 
 </div>
 
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">回顾上一篇</div><a href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/AlchemySystem/">GF_3_AlchemySystem</a></div><div class="item" id="next"><div class="note">接下来阅读</div><a href="/wiki/57%E7%B3%BB%E5%88%97%E6%8F%92%E4%BB%B6/ExternalGlossary/">GF_3_ExternalGlossary</a></div></section></div>
+
 
 
   <div class="related-wrap md-text" id="comments">
